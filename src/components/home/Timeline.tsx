@@ -3,13 +3,19 @@ import React from 'react';
 const Timeline: React.FC = () => {
   const timelineEvents = [
     {
-      year: 2001,
+      year: 2002,
       title: 'Năm học đầu tiên',
       description: 'Chúng ta bắt đầu hành trình học tập tại trường THPT Buôn Hồ.',
       icon: '🏫',
     },
     {
       year: 2003,
+      title: 'Năm học thứ hai',
+      description: 'Lớp chúng ta giành giải thưởng tinh thần và thống trị các môn thể thao.',
+      icon: '🏆',
+    },
+    {
+      year: 2004,
       title: 'Năm học thứ ba',
       description: 'Lớp chúng ta giành giải thưởng tinh thần và thống trị các môn thể thao.',
       icon: '🏆',
@@ -19,18 +25,6 @@ const Timeline: React.FC = () => {
       title: 'Tốt nghiệp',
       description: 'Chúng ta tung mũ tốt nghiệp và bắt đầu chinh phục thế giới.',
       icon: '🎓',
-    },
-    {
-      year: 2010,
-      title: 'Hội ngộ 5 năm',
-      description: 'Buổi hội ngộ đầu tiên khi chúng ta đang tìm đường cho cuộc sống.',
-      icon: '🎉',
-    },
-    {
-      year: 2015,
-      title: 'Hội ngộ 10 năm',
-      description: 'Kỷ niệm một thập kỷ thành tựu và gia đình đang phát triển.',
-      icon: '👪',
     },
     {
       year: 2025,
