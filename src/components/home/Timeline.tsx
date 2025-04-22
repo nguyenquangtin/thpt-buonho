@@ -4,38 +4,38 @@ const Timeline: React.FC = () => {
   const timelineEvents = [
     {
       year: 2001,
-      title: 'Freshman Year',
-      description: 'We began our high school journey at Buon Ho High School.',
+      title: 'Năm học đầu tiên',
+      description: 'Chúng ta bắt đầu hành trình học tập tại trường THPT Buôn Hồ.',
       icon: '🏫',
     },
     {
       year: 2003,
-      title: 'Junior Year',
-      description: 'Our class won the school spirit award and dominated in sports.',
+      title: 'Năm học thứ ba',
+      description: 'Lớp chúng ta giành giải thưởng tinh thần và thống trị các môn thể thao.',
       icon: '🏆',
     },
     {
       year: 2005,
-      title: 'Graduation',
-      description: 'We tossed our caps and set out to conquer the world.',
+      title: 'Tốt nghiệp',
+      description: 'Chúng ta tung mũ tốt nghiệp và bắt đầu chinh phục thế giới.',
       icon: '🎓',
     },
     {
       year: 2010,
-      title: '5-Year Reunion',
-      description: 'Our first reunion as young adults finding our way.',
+      title: 'Hội ngộ 5 năm',
+      description: 'Buổi hội ngộ đầu tiên khi chúng ta đang tìm đường cho cuộc sống.',
       icon: '🎉',
     },
     {
       year: 2015,
-      title: '10-Year Reunion',
-      description: 'Celebrating a decade of achievements and growing families.',
+      title: 'Hội ngộ 10 năm',
+      description: 'Kỷ niệm một thập kỷ thành tựu và gia đình đang phát triển.',
       icon: '👪',
     },
     {
       year: 2025,
-      title: '20-Year Reunion',
-      description: 'Two decades of memories, growth, and friendships.',
+      title: 'Hội ngộ 20 năm',
+      description: 'Hai thập kỷ kỷ niệm, trưởng thành và tình bạn.',
       icon: '✨',
     },
   ];
@@ -45,11 +45,11 @@ const Timeline: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-indigo-900 mb-4">
-            Our Journey
+            Hành trình của chúng ta
           </h2>
           <div className="h-1 w-24 bg-amber-500 mx-auto mb-6"></div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            From freshmen to accomplished adults, here's the story of our class through the years.
+            Từ những học sinh năm nhất đến những người trưởng thành thành đạt, đây là câu chuyện của lớp chúng ta qua những năm tháng.
           </p>
         </div>
 
@@ -62,7 +62,8 @@ const Timeline: React.FC = () => {
             {timelineEvents.map((event, index) => (
               <div
                 key={event.year}
-                className={`mb-12 flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}
+                className={`mb-12 flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
+                  }`}
               >
                 <div className={`w-1/2 ${index % 2 === 0 ? 'pr-16 text-right' : 'pl-16'}`}>
                   <div

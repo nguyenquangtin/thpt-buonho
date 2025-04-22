@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center space-x-2">
           <School className="h-8 w-8" />
-          <span className="text-xl font-bold">THPT Buon Ho</span>
+          <span className="text-xl font-bold">THPT Buôn Hồ</span>
         </div>
 
         {/* Desktop Navigation */}

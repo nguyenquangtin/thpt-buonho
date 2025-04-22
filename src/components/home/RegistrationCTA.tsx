@@ -8,10 +8,10 @@ const RegistrationCTA: React.FC = () => {
         <div className="max-w-4xl mx-auto">
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 shadow-lg">
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold mb-4">Register for the Reunion</h2>
+              <h2 className="text-3xl font-bold mb-4">Đăng ký tham gia hội ngộ</h2>
               <p className="text-lg opacity-90">
-                Secure your spot at our 20-year reunion celebration! Register today to reconnect,
-                reminisce, and create new memories with your classmates.
+                Đăng ký ngay để tham gia buổi hội ngộ 20 năm! Gặp lại bạn bè cũ,
+                ôn lại kỷ niệm và tạo thêm những kỷ niệm mới cùng các bạn cùng lớp.
               </p>
             </div>
 
@@ -19,39 +19,39 @@ const RegistrationCTA: React.FC = () => {
               <div className="flex items-center">
                 <Calendar className="h-8 w-8 mr-4 text-amber-300" />
                 <div>
-                  <h3 className="font-bold">July 15-17, 2025</h3>
-                  <p className="opacity-80">Mark your calendar</p>
+                  <h3 className="font-bold">15-17/06/2025</h3>
+                  <p className="opacity-80">Đánh dấu lịch</p>
                 </div>
               </div>
 
               <div className="flex items-center">
                 <MapPin className="h-8 w-8 mr-4 text-amber-300" />
                 <div>
-                  <h3 className="font-bold">Buon Ho</h3>
-                  <p className="opacity-80">Our hometown</p>
+                  <h3 className="font-bold">Buôn Hồ</h3>
+                  <p className="opacity-80">Quê hương chúng ta</p>
                 </div>
               </div>
 
               <div className="flex items-center">
                 <Users className="h-8 w-8 mr-4 text-amber-300" />
                 <div>
-                  <h3 className="font-bold">215 Classmates</h3>
-                  <p className="opacity-80">Let's reunite</p>
+                  <h3 className="font-bold">215 Bạn cùng lớp</h3>
+                  <p className="opacity-80">Hãy cùng gặp lại</p>
                 </div>
               </div>
             </div>
 
             <div className="text-center">
               <div className="bg-amber-400 text-indigo-900 inline-block px-4 py-2 rounded-full mb-6">
-                <span className="font-bold">Early Bird Registration:</span> $75 until March 1, 2025
+                <span className="font-bold">Đăng ký sớm:</span> 800.000đ đến hết ngày 01/03/2025
               </div>
 
               <div className="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:space-x-4 justify-center">
                 <button className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105">
-                  Register Now
+                  Đăng ký ngay
                 </button>
                 <button className="bg-transparent hover:bg-white/10 text-white border border-white font-bold py-3 px-8 rounded-full transition-all duration-300">
-                  Learn More
+                  Tìm hiểu thêm
                 </button>
               </div>
             </div>

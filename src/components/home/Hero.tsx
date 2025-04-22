@@ -47,7 +47,7 @@ const Hero: React.FC = () => {
       {/* Content */}
       <div className="container mx-auto px-4 z-10 text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-lg">
-          <span className="block">THPT Buon Ho</span>
+          <span className="block">THPT Buôn Hồ</span>
           <span className="block text-amber-400 mt-2">Niên Khóa 2005</span>
         </h1>
 

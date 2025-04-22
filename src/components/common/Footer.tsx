@@ -10,10 +10,10 @@ const Footer: React.FC = () => {
           <div className="md:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
               <School className="h-8 w-8" />
-              <span className="text-xl font-bold">Buon Ho 2005</span>
+              <span className="text-xl font-bold">THPT Buôn Hồ 2005</span>
             </div>
             <p className="opacity-80 mb-4">
-              Celebrating 20 years of friendships, memories, and accomplishments since our graduation.
+              Kỷ niệm 20 năm tình bạn, kỷ niệm và những thành tựu kể từ ngày chúng ta tốt nghiệp.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-white hover:text-amber-400 transition-colors">
@@ -35,40 +35,40 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h3 className="text-lg font-bold mb-4">Quick Links</h3>
+            <h3 className="text-lg font-bold mb-4">Liên kết nhanh</h3>
             <ul className="space-y-2">
-              <li><Link href="#home" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">Home</Link></li>
-              <li><Link href="#about" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">About</Link></li>
-              <li><Link href="#events" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">Events</Link></li>
-              <li><Link href="#gallery" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">Gallery</Link></li>
-              <li><Link href="#alumni" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">Alumni</Link></li>
+              <li><Link href="#home" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">Trang chủ</Link></li>
+              <li><Link href="#about" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">Thông tin</Link></li>
+              <li><Link href="#events" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">Sự kiện</Link></li>
+              <li><Link href="#gallery" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">Hình ảnh</Link></li>
+              <li><Link href="#alumni" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">Cựu học sinh</Link></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-lg font-bold mb-4">Reunion Info</h3>
+            <h3 className="text-lg font-bold mb-4">Thông tin hội ngộ</h3>
             <ul className="space-y-2">
-              <li><Link href="#" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">Registration</Link></li>
-              <li><Link href="#" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">Schedule</Link></li>
-              <li><Link href="#" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">Accommodations</Link></li>
-              <li><Link href="#" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">Travel Info</Link></li>
-              <li><Link href="#" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">FAQs</Link></li>
+              <li><Link href="#" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">Đăng ký</Link></li>
+              <li><Link href="#" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">Lịch trình</Link></li>
+              <li><Link href="#" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">Chỗ ở</Link></li>
+              <li><Link href="#" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">Thông tin di chuyển</Link></li>
+              <li><Link href="#" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">Câu hỏi thường gặp</Link></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-lg font-bold mb-4">Stay Updated</h3>
+            <h3 className="text-lg font-bold mb-4">Cập nhật thông tin</h3>
             <p className="opacity-80 mb-4">
-              Join our mailing list to receive the latest news and updates about our reunion.
+              Tham gia danh sách email của chúng tôi để nhận tin tức và cập nhật mới nhất về buổi hội ngộ.
             </p>
             <div className="flex flex-col space-y-2">
               <input
                 type="email"
-                placeholder="Your email address"
+                placeholder="Địa chỉ email của bạn"
                 className="p-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-amber-400"
               />
               <button className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-4 rounded-lg transition-colors">
-                Subscribe
+                Đăng ký
               </button>
             </div>
           </div>
@@ -76,12 +76,12 @@ const Footer: React.FC = () => {
 
         <div className="mt-12 pt-8 border-t border-indigo-800 text-center">
           <p className="opacity-80">
-            &copy; 2025 Buon Ho High School Class of 2005. All rights reserved.
+            &copy; 2025 THPT Buôn Hồ Khóa 2005. Tất cả quyền được bảo lưu.
           </p>
           <p className="mt-2 flex items-center justify-center">
-            <span>Made with</span>
+            <span>Được tạo bởi</span>
             <Heart className="w-4 h-4 mx-1 text-red-500" />
-            <span>by the Reunion Committee</span>
+            <span>Ban tổ chức hội ngộ</span>
           </p>
         </div>
       </div>

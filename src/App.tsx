@@ -15,7 +15,7 @@ import Footer from './components/common/Footer';
 function App() {
   // Update document title
   React.useEffect(() => {
-    document.title = 'THPT Buon Ho - Hội ngộ niên khóa 2005 Sau 20 năm ';
+    document.title = 'THPT Buôn Hồ - Hội ngộ niên khóa 2005 Sau 20 năm';
   }, []);
 
   return (
