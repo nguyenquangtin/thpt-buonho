@@ -28,7 +28,7 @@ function App() {
       <Gallery />
       <AlumniDirectory />
       <RegistrationCTA />
-      <MemoryWall />
+      {/* <MemoryWall /> */}
       <News />
       <Contact />
       <Footer />

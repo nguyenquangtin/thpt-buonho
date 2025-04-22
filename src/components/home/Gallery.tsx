@@ -7,9 +7,9 @@ const Gallery: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
 
   const categories = ['All', ...new Set(galleryImages.map(img => img.category))];
-  
-  const filteredImages = selectedCategory === 'All' 
-    ? galleryImages 
+
+  const filteredImages = selectedCategory === 'All'
+    ? galleryImages
     : galleryImages.filter(img => img.category === selectedCategory);
 
   return (
@@ -17,11 +17,11 @@ const Gallery: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-indigo-900 mb-4">
-            Memory Lane
+            Hành Trình Kỷ Niệm
           </h2>
           <div className="h-1 w-24 bg-amber-500 mx-auto mb-6"></div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Take a trip down memory lane with these photos from our high school years.
+            Cùng ngược dòng thời gian với những bức ảnh từ thời cấp ba của chúng ta.
           </p>
         </div>
 
@@ -30,11 +30,10 @@ const Gallery: React.FC = () => {
           {categories.map(category => (
             <button
               key={category}
-              className={`px-4 py-2 rounded-full font-medium transition-colors ${
-                selectedCategory === category
-                  ? 'bg-indigo-700 text-white'
-                  : 'bg-indigo-100 text-indigo-700 hover:bg-indigo-200'
-              }`}
+              className={`px-4 py-2 rounded-full font-medium transition-colors ${selectedCategory === category
+                ? 'bg-indigo-700 text-white'
+                : 'bg-indigo-100 text-indigo-700 hover:bg-indigo-200'
+                }`}
               onClick={() => setSelectedCategory(category)}
             >
               {category}
@@ -45,15 +44,15 @@ const Gallery: React.FC = () => {
         {/* Gallery grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {filteredImages.map((image) => (
-            <div 
+            <div
               key={image.id}
               className="relative overflow-hidden rounded-lg shadow-md group cursor-pointer"
               onClick={() => setSelectedImage(image.src)}
             >
               <div className="aspect-w-4 aspect-h-3">
-                <img 
-                  src={image.src} 
-                  alt={image.alt} 
+                <img
+                  src={image.src}
+                  alt={image.alt}
                   className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
@@ -70,22 +69,22 @@ const Gallery: React.FC = () => {
 
         <div className="text-center mt-12">
           <button className="bg-indigo-100 hover:bg-indigo-200 text-indigo-700 font-medium py-3 px-8 rounded-full transition-colors">
-            View Full Album
+            Xem Toàn Bộ Album
           </button>
         </div>
 
         {/* Lightbox */}
         {selectedImage && (
           <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4">
-            <button 
+            <button
               className="absolute top-4 right-4 text-white hover:text-amber-400"
               onClick={() => setSelectedImage(null)}
             >
               <X size={32} />
             </button>
-            <img 
-              src={selectedImage} 
-              alt="Enlarged view" 
+            <img
+              src={selectedImage}
+              alt="Ảnh phóng to"
               className="max-h-[90vh] max-w-[90vw] object-contain"
             />
           </div>

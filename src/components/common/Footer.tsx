@@ -81,7 +81,7 @@ const Footer: React.FC = () => {
           <p className="mt-2 flex items-center justify-center">
             <span>Được tạo bởi</span>
             <Heart className="w-4 h-4 mx-1 text-red-500" />
-            <span>Ban tổ chức hội ngộ</span>
+            <span>Ban chấp hành niên khóa 2005 - THPT Buôn Hồ</span>
           </p>
         </div>
       </div>
