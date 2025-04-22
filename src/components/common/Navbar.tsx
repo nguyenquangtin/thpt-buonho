@@ -17,27 +17,26 @@ const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', path: '#home' },
-    { name: 'About', path: '#about' },
-    { name: 'Events', path: '#events' },
-    { name: 'Gallery', path: '#gallery' },
-    { name: 'Alumni', path: '#alumni' },
-    { name: 'Memories', path: '#memories' },
-    { name: 'Contact', path: '#contact' },
+    { name: 'Trang chủ', path: '#home' },
+    { name: 'Thông tin', path: '#about' },
+    { name: 'Sự Kiện', path: '#events' },
+    { name: 'Hình ảnh', path: '#gallery' },
+    { name: 'Cựu Học Sinh', path: '#alumni' },
+    { name: 'Kỷ Niệm', path: '#memories' },
+    { name: 'Liên Hệ', path: '#contact' },
   ];
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-indigo-900 text-white shadow-lg py-2'
-          : 'bg-transparent text-white py-4'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+        ? 'bg-indigo-900 text-white shadow-lg py-2'
+        : 'bg-transparent text-white py-4'
+        }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center space-x-2">
           <School className="h-8 w-8" />
-          <span className="text-xl font-bold">Krong Ana 2005</span>
+          <span className="text-xl font-bold">THPT Buon Ho</span>
         </div>
 
         {/* Desktop Navigation */}
@@ -46,9 +45,8 @@ const Navbar: React.FC = () => {
             <Link
               key={link.name}
               href={link.path}
-              className={`hover:text-amber-400 transition-colors ${
-                isScrolled ? 'text-white' : 'text-white'
-              }`}
+              className={`hover:text-amber-400 transition-colors ${isScrolled ? 'text-white' : 'text-white'
+                }`}
             >
               {link.name}
             </Link>
@@ -58,7 +56,7 @@ const Navbar: React.FC = () => {
         <button
           className="hidden md:block bg-amber-500 hover:bg-amber-600 text-white py-2 px-4 rounded-full transition-colors font-medium"
         >
-          Register Now
+          Đăng ký ngay
         </button>
 
         {/* Mobile Menu Toggle */}
@@ -87,7 +85,7 @@ const Navbar: React.FC = () => {
             <button
               className="bg-amber-500 hover:bg-amber-600 text-white py-2 px-4 rounded-full transition-colors font-medium w-full mt-4"
             >
-              Register Now
+              Đăng ký ngay
             </button>
           </div>
         </div>

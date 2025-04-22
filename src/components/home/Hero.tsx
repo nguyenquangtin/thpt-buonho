@@ -11,7 +11,7 @@ const Hero: React.FC = () => {
 
   useEffect(() => {
     // Set reunion date (July 15, 2025)
-    const reunionDate = new Date('2025-07-15T00:00:00').getTime();
+    const reunionDate = new Date('2025-06-15T00:00:00').getTime();
 
     const timer = setInterval(() => {
       const now = new Date().getTime();
@@ -47,49 +47,49 @@ const Hero: React.FC = () => {
       {/* Content */}
       <div className="container mx-auto px-4 z-10 text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-lg">
-          <span className="block">Krong Ana High School</span>
-          <span className="block text-amber-400 mt-2">Class of 2005</span>
+          <span className="block">THPT Buon Ho</span>
+          <span className="block text-amber-400 mt-2">Niên Khóa 2005</span>
         </h1>
 
         <div className="h-1 w-24 bg-amber-500 mx-auto mb-8 mt-2"></div>
 
         <h2 className="text-2xl md:text-3xl mb-6 font-light">
-          <span className="animate-pulse">Celebrating 20 Years</span>
+          <span className="animate-pulse">Tổ chức kỷ niệm 20 năm hội ngộ</span>
         </h2>
 
         <div className="flex items-center justify-center space-x-2 text-amber-200 mb-8">
           <CalendarDays className="w-6 h-6" />
-          <span className="text-xl">July 15-17, 2025</span>
+          <span className="text-xl">Ngày 15 Tháng 6, Năm 2025</span>
         </div>
 
         <div className="bg-black bg-opacity-40 rounded-lg p-6 max-w-md mx-auto mb-8">
-          <h3 className="text-xl mb-4">Countdown to Reunion</h3>
+          <h3 className="text-xl mb-4">Đếm ngược đến ngày hội ngộ</h3>
           <div className="grid grid-cols-4 gap-2 text-center">
             <div className="bg-indigo-800 p-3 rounded-lg">
               <div className="text-3xl font-bold">{timeLeft.days}</div>
-              <div className="text-xs uppercase">Days</div>
+              <div className="text-xs uppercase">Ngày</div>
             </div>
             <div className="bg-indigo-800 p-3 rounded-lg">
               <div className="text-3xl font-bold">{timeLeft.hours}</div>
-              <div className="text-xs uppercase">Hours</div>
+              <div className="text-xs uppercase">Giờ</div>
             </div>
             <div className="bg-indigo-800 p-3 rounded-lg">
               <div className="text-3xl font-bold">{timeLeft.minutes}</div>
-              <div className="text-xs uppercase">Mins</div>
+              <div className="text-xs uppercase">Phút</div>
             </div>
             <div className="bg-indigo-800 p-3 rounded-lg">
               <div className="text-3xl font-bold">{timeLeft.seconds}</div>
-              <div className="text-xs uppercase">Secs</div>
+              <div className="text-xs uppercase">Giây</div>
             </div>
           </div>
         </div>
 
         <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
           <button className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105">
-            Register Now
+            Đăng ký ngay
           </button>
           <button className="bg-transparent hover:bg-white/10 text-white border border-white font-bold py-3 px-8 rounded-full transition-all duration-300">
-            View Schedule
+            Xem lịch trình
           </button>
         </div>
       </div>

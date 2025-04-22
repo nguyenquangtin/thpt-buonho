@@ -15,7 +15,7 @@ import Footer from './components/common/Footer';
 function App() {
   // Update document title
   React.useEffect(() => {
-    document.title = 'Krong Ana High School - Class of 2005 Reunion';
+    document.title = 'THPT Buon Ho - Hội ngộ niên khóa 2005 Sau 20 năm ';
   }, []);
 
   return (

@@ -11,7 +11,7 @@ const About: React.FC = () => {
           </h2>
           <div className="h-1 w-24 bg-amber-500 mx-auto mb-6"></div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Join us as we celebrate two decades since we walked the halls of Krong Ana High School. 
+            Join us as we celebrate two decades since we walked the halls of Buon Ho High School.
             Reconnect with old friends and create new memories.
           </p>
         </div>
@@ -53,11 +53,11 @@ const About: React.FC = () => {
             <div className="p-8 md:p-12 flex flex-col justify-center">
               <h3 className="text-2xl font-bold mb-4">About Our Class</h3>
               <p className="mb-4">
-                The Class of 2005 was known for its school spirit, academic achievements, and championship sports teams. 
+                The Class of 2005 was known for its school spirit, academic achievements, and championship sports teams.
                 As we graduated, we set out to make our mark on the world.
               </p>
               <p className="mb-4">
-                Now, 20 years later, our classmates have become doctors, engineers, teachers, artists, entrepreneurs, 
+                Now, 20 years later, our classmates have become doctors, engineers, teachers, artists, entrepreneurs,
                 parents, and so much more. It's time to come together to celebrate our accomplishments.
               </p>
               <div className="flex space-x-4 mt-6">
@@ -75,7 +75,7 @@ const About: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div 
+            <div
               className="h-64 md:h-auto bg-cover bg-center"
               style={{ backgroundImage: "url(https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)" }}
             ></div>
