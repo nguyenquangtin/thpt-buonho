@@ -11,7 +11,7 @@ const About: React.FC = () => {
           </h2>
           <div className="h-1 w-24 bg-amber-500 mx-auto mb-6"></div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Hãy cùng chúng tôi kỷ niệm hai thập kỷ kể từ ngày chúng ta rời khỏi mái trường THPT Buôn Hồ.
+            Hãy cùng chúng tôi kỷ niệm hai thập kỷ kể từ ngày chúng ta rời khỏi mái trường THPT Krông Buk.
             Gặp lại bạn bè cũ và tạo thêm những kỷ niệm mới.
           </p>
         </div>

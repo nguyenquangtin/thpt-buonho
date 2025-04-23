@@ -11,11 +11,12 @@ import RegistrationCTA from './components/home/RegistrationCTA';
 import News from './components/home/News';
 import Contact from './components/home/Contact';
 import Footer from './components/common/Footer';
+import EventOrganizers from './components/home/EventOrganizers';
 
 function App() {
   // Update document title
   React.useEffect(() => {
-    document.title = 'THPT Buôn Hồ - Hội ngộ niên khóa 2005 Sau 20 năm';
+    document.title = 'THPT Krông Buk - Hội ngộ niên khóa 2005 Sau 20 năm';
   }, []);
 
   return (
@@ -25,11 +26,12 @@ function App() {
       <About />
       <Timeline />
       <EventSchedule />
+      <EventOrganizers />
       <Gallery />
       <AlumniDirectory />
       <RegistrationCTA />
       {/* <MemoryWall /> */}
-      <News />
+      {/* <News /> */}
       <Contact />
       <Footer />
     </div>

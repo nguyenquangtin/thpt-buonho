@@ -20,9 +20,10 @@ const Navbar: React.FC = () => {
     { name: 'Trang chủ', path: '#home' },
     { name: 'Thông tin', path: '#about' },
     { name: 'Sự Kiện', path: '#events' },
+    { name: 'BTC', path: '#organizers' },
     { name: 'Hình ảnh', path: '#gallery' },
     { name: 'Cựu Học Sinh', path: '#alumni' },
-    { name: 'Kỷ Niệm', path: '#memories' },
+    // { name: 'Kỷ Niệm', path: '#memories' },
     { name: 'Liên Hệ', path: '#contact' },
   ];
 
@@ -36,7 +37,7 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center space-x-2">
           <School className="h-8 w-8" />
-          <span className="text-xl font-bold">THPT Buôn Hồ</span>
+          <span className="text-xl font-bold">THPT Krông Buk</span>
         </div>
 
         {/* Desktop Navigation */}

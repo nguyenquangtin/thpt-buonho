@@ -27,7 +27,7 @@ const RegistrationCTA: React.FC = () => {
               <div className="flex items-center">
                 <MapPin className="h-8 w-8 mr-4 text-amber-300" />
                 <div>
-                  <h3 className="font-bold">Buôn Hồ</h3>
+                  <h3 className="font-bold">Krông Buk</h3>
                   <p className="opacity-80">Quê hương chúng ta</p>
                 </div>
               </div>

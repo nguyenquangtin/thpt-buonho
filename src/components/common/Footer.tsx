@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
           <div className="md:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
               <School className="h-8 w-8" />
-              <span className="text-xl font-bold">THPT Buôn Hồ 2005</span>
+              <span className="text-xl font-bold">THPT Krông Buk 2005</span>
             </div>
             <p className="opacity-80 mb-4">
               Kỷ niệm 20 năm tình bạn, kỷ niệm và những thành tựu kể từ ngày chúng ta tốt nghiệp.
@@ -76,12 +76,12 @@ const Footer: React.FC = () => {
 
         <div className="mt-12 pt-8 border-t border-indigo-800 text-center">
           <p className="opacity-80">
-            &copy; 2025 THPT Buôn Hồ Khóa 2005. Tất cả quyền được bảo lưu.
+            &copy; 2025 THPT Krông Buk Khóa 2005. Tất cả quyền được bảo lưu.
           </p>
           <p className="mt-2 flex items-center justify-center">
             <span>Được tạo bởi</span>
             <Heart className="w-4 h-4 mx-1 text-red-500" />
-            <span>Ban chấp hành niên khóa 2005 - THPT Buôn Hồ</span>
+            <span>Ban chấp hành niên khóa 2005 - THPT Krông Buk</span>
           </p>
         </div>
       </div>

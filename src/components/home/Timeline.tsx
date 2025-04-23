@@ -5,7 +5,7 @@ const Timeline: React.FC = () => {
     {
       year: 2002,
       title: 'Năm học đầu tiên',
-      description: 'Chúng ta bắt đầu hành trình học tập tại trường THPT Buôn Hồ.',
+      description: 'Chúng ta bắt đầu hành trình học tập tại trường THPT Krông Buk.',
       icon: '🏫',
     },
     {

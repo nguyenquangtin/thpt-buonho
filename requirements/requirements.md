@@ -1,7 +1,7 @@
-# THPT Buon Ho - Class of 2004 Reunion Website Requirements
+# THPT Krông Buk - Class of 2004 Reunion Website Requirements
 
 ## Project Overview
-A website for the 20-year reunion of THPT Buon Ho's Class of 2004, scheduled for June 16, 2024. The site will serve as an information hub and registration platform for the event.
+A website for the 20-year reunion of THPT Krông Buk's Class of 2004, scheduled for June 16, 2024. The site will serve as an information hub and registration platform for the event.
 
 ## Core Features
 
