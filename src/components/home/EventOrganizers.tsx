@@ -9,7 +9,7 @@ const EventOrganizers: React.FC = () => {
       role: 'Ban Tổ Chức - 12B',
       info: 'Trung tâm Y tế huyện Krông Búk',
       phone: '0916777758',
-      image: '/images/organizers/quoc_duy_2.png'
+      image: '/images/organizers/quoc_duy.jpg'
     },
     {
       id: 2,
