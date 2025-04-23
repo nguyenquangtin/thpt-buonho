@@ -37,11 +37,11 @@ const EventOrganizers: React.FC = () => {
     },
     {
       id: 5,
-      name: 'Dũng',
-      role: 'BTC',
-      info: '---',
-      phone: '---',
-      image: '/images/organizers/hoangvane.jpg'
+      name: 'Lê Tấn Dũng',
+      role: 'Ban Tổ Chức - 12B',
+      info: 'Thiết kế - In Ấn - Quảng Cáo HD - 57 Nguyễn Chí Thanh - Buôn Hồ',
+      phone: '0947 83 96 96',
+      image: '/images/organizers/tan_dung.jpg'
     }
   ];
 
