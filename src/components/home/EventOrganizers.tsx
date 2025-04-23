@@ -37,10 +37,10 @@ const EventOrganizers: React.FC = () => {
     },
     {
       id: 5,
-      name: 'Hoàng Văn E',
-      role: 'Hậu Cần',
-      info: 'hoangvane@example.com',
-      phone: '(123) 456-7894',
+      name: 'Dũng',
+      role: 'BTC',
+      info: '---',
+      phone: '---',
       image: '/images/organizers/hoangvane.jpg'
     }
   ];

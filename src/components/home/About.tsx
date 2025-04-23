@@ -67,7 +67,7 @@ const About: React.FC = () => {
                 </div>
                 <div className="text-center">
                   <span className="block text-3xl font-bold text-amber-400">28</span>
-                  <span className="text-sm">Quốc gia</span>
+                  <span className="text-sm">Tỉnh thành</span>
                 </div>
                 <div className="text-center">
                   <span className="block text-3xl font-bold text-amber-400">20</span>
