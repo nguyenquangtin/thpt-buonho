@@ -1,15 +1,15 @@
 import React from 'react';
 import { Phone } from 'lucide-react';
 
-const EventOrganizers: React.FC = () => {
+const EventContacts: React.FC = () => {
   const organizers = [
     {
       id: 1,
-      name: 'Trần Quốc Duy',
-      role: 'Ban Tổ Chức - 12B',
-      info: 'Trung tâm Y tế huyện Krông Búk',
-      phone: '0916777758',
-      image: '/images/organizers/quoc_duy.jpg'
+      name: 'Nguyễn Thị Kiều Hoa',
+      role: 'Ban Liên Lạc - 12I',
+      info: 'Trung tâm GDNN - GDTX Buôn Hồ',
+      phone: '0764656255',
+      image: '/images/contacts/kieu_hoa.jpg'
     },
     {
       id: 2,
@@ -42,14 +42,6 @@ const EventOrganizers: React.FC = () => {
       info: 'Thiết kế - In Ấn - Quảng Cáo HD - 57 Nguyễn Chí Thanh - Buôn Hồ',
       phone: '0947 83 96 96',
       image: '/images/organizers/tan_dung.jpg'
-    },
-    {
-      id: 6,
-      name: 'Nguyễn Thị Kiều Hoa',
-      role: 'Ban Liên Lạc - 12I',
-      info: 'Trung tâm GDNN - GDTX Buôn Hồ',
-      phone: '0764656255',
-      image: '/images/contacts/kieu_hoa.jpg'
     }
   ];
 
@@ -58,7 +50,7 @@ const EventOrganizers: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-indigo-900 mb-4">
-            Ban Tổ Chức
+            Ban Đại Diện Liên Lạc
           </h2>
           <div className="h-1 w-24 bg-amber-500 mx-auto mb-6"></div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -104,4 +96,4 @@ const EventOrganizers: React.FC = () => {
   );
 };
 
-export default EventOrganizers;
+export default EventContacts;

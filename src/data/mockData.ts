@@ -179,6 +179,49 @@ export const events: Event[] = [
 
 export const galleryImages: GalleryImage[] = [
   {
+    id: "200",
+    src: "/images/12a/1.jpg",
+    alt: "Lớp 12A - Ảnh 1",
+    year: 2005,
+    category: "12A",
+  },
+  {
+    id: "201",
+    src: "/images/12a/2.jpg",
+    alt: "Lớp 12A - Ảnh 2",
+    year: 2005,
+    category: "12A",
+  },
+  {
+    id: "202",
+    src: "/images/12a/3.jpg",
+    alt: "Lớp 12A - Ảnh 3",
+    year: 2005,
+    category: "12A",
+  },
+  {
+    id: "203",
+    src: "/images/12a/4.jpg",
+    alt: "Lớp 12A - Ảnh 4",
+    year: 2005,
+    category: "12A",
+  },
+  {
+    id: "204",
+    src: "/images/12a/5.jpg",
+    alt: "Lớp 12A - Ảnh 5",
+    year: 2005,
+    category: "12A",
+  },
+  {
+    id: "205",
+    src: "/images/12a/6.jpg",
+    alt: "Lớp 12A - Ảnh 6",
+    year: 2005,
+    category: "12A",
+  },
+
+  {
     id: "100",
     src: "/images/12b/1.jpg",
     alt: "Lớp 12B - Ảnh 1",

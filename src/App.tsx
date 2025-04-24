@@ -5,14 +5,14 @@ import About from './components/home/About';
 import EventSchedule from './components/home/EventSchedule';
 import Gallery from './components/home/Gallery';
 import AlumniDirectory from './components/home/AlumniDirectory';
-import MemoryWall from './components/home/MemoryWall';
+// import MemoryWall from './components/home/MemoryWall';
+// import News from './components/home/News';
+
 import Timeline from './components/home/Timeline';
 import RegistrationCTA from './components/home/RegistrationCTA';
-import News from './components/home/News';
 import Contact from './components/home/Contact';
 import Footer from './components/common/Footer';
 import EventOrganizers from './components/home/EventOrganizers';
-
 function App() {
   // Update document title
   React.useEffect(() => {
