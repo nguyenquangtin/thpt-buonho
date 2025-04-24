@@ -5,15 +5,14 @@ import About from './components/home/About';
 import Gallery from './components/home/Gallery';
 import AlumniDirectory from './components/home/AlumniDirectory';
 import EventTimeline from './components/home/EventTimeline';
-// import MemoryWall from './components/home/MemoryWall';
-// import News from './components/home/News';
 import EventOrganizers from './components/home/EventOrganizers';
-import Timeline from './components/home/Timeline';
 import RegistrationCTA from './components/home/RegistrationCTA';
 import Contact from './components/home/Contact';
 import Footer from './components/common/Footer';
 
-
+// import MemoryWall from './components/home/MemoryWall';
+// import News from './components/home/News';
+// import Timeline from './components/home/Timeline';
 
 function App() {
   // Update document title
@@ -26,10 +25,8 @@ function App() {
       <Navbar />
       <Hero />
       <About />
-      <Timeline />
-
+      {/* <Timeline /> */}
       <EventTimeline />
-
       <EventOrganizers />
       <Gallery />
       <AlumniDirectory />

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calendar, Clock, MapPin, Users } from 'lucide-react';
+import { MapPin, Users, Calendar, Clock } from 'lucide-react';
 
 interface TimelineItem {
   id: string;
@@ -127,15 +127,23 @@ const timelineItems: TimelineItem[] = [
 
 const EventTimeline: React.FC = () => {
   const [viewMode, setViewMode] = useState<'table' | 'cards'>('table');
+  const [activeItem, setActiveItem] = useState<string | null>(null);
 
   return (
-    <section id="timeline" className="py-20 bg-indigo-50">
-      <div className="container mx-auto px-4">
+    <section id="timeline" className="relative py-20 overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-indigo-50">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiA0NGM2LjYyNyAwIDEyLTUuMzczIDEyLTEycy01LjM3My0xMi0xMi0xMi0xMiA1LjM3My0xMiAxMiA1LjM3MyAxMiAxMiAxMnptMC0yYy01LjUyMyAwLTEwLTQuNDc3LTEwLTEwIDAtNS41MjMgNC40NzctMTAgMTAtMTAgNS41MjMgMCAxMCA0LjQ3NyAxMCAxMCAwIDUuNTIzLTQuNDc3IDEwLTEwIDEweiIgZmlsbD0iI2UwZTdmZiIvPjwvZz48L3N2Zz4=')] opacity-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-transparent"></div>
+      </div>
+
+      {/* Content */}
+      <div className="relative container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-indigo-900 mb-4">
             Chương Trình Chi Tiết
           </h2>
-          <div className="h-1 w-24 bg-amber-500 mx-auto mb-6"></div>
+          <div className="h-1 w-24 bg-amber-500 mx-auto mb-6 transform transition-all duration-300 hover:scale-110"></div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Cùng xem lại lịch trình chi tiết của ngày hội ngộ. Từ những khoảnh khắc trang trọng đến những phút giây thân mật,
             chúng ta sẽ cùng nhau tạo nên những kỷ niệm khó quên.
@@ -144,23 +152,25 @@ const EventTimeline: React.FC = () => {
 
         {/* View mode toggle */}
         <div className="flex justify-center mb-8">
-          <div className="inline-flex rounded-lg bg-white p-1 shadow-sm">
+          <div className="inline-flex rounded-lg bg-white p-1 shadow-sm border border-gray-200">
             <button
               onClick={() => setViewMode('table')}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${viewMode === 'table'
-                ? 'bg-indigo-600 text-white'
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 ${viewMode === 'table'
+                ? 'bg-indigo-600 text-white shadow-md'
                 : 'text-gray-600 hover:bg-gray-100'
                 }`}
             >
+              <Calendar className="inline-block w-4 h-4 mr-2" />
               Bảng
             </button>
             <button
               onClick={() => setViewMode('cards')}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${viewMode === 'cards'
-                ? 'bg-indigo-600 text-white'
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 ${viewMode === 'cards'
+                ? 'bg-indigo-600 text-white shadow-md'
                 : 'text-gray-600 hover:bg-gray-100'
                 }`}
             >
+              <Clock className="inline-block w-4 h-4 mr-2" />
               Thẻ
             </button>
           </div>
@@ -168,22 +178,30 @@ const EventTimeline: React.FC = () => {
 
         {viewMode === 'table' ? (
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
               <div className="overflow-x-auto">
                 <table className="min-w-full divide-y divide-gray-200">
-                  <thead className="bg-gray-50">
+                  <thead className="bg-indigo-50">
                     <tr>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">STT</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nội dung</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Thời gian</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Thực hiện</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Địa điểm</th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-indigo-600 uppercase tracking-wider">STT</th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-indigo-600 uppercase tracking-wider">Nội dung</th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-indigo-600 uppercase tracking-wider">Thời gian</th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-indigo-600 uppercase tracking-wider">Thực hiện</th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-indigo-600 uppercase tracking-wider">Địa điểm</th>
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
                     {timelineItems.map((item) => (
-                      <tr key={item.id} className="hover:bg-gray-50">
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item.id}</td>
+                      <tr
+                        key={item.id}
+                        className={`transition-all duration-300 ${activeItem === item.id
+                          ? 'bg-indigo-50 transform scale-[1.02]'
+                          : 'hover:bg-gray-50'
+                          }`}
+                        onMouseEnter={() => setActiveItem(item.id)}
+                        onMouseLeave={() => setActiveItem(null)}
+                      >
+                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-indigo-600">{item.id}</td>
                         <td className="px-6 py-4 text-sm text-gray-900">{item.content}</td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item.time}</td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item.responsible}</td>
@@ -200,14 +218,20 @@ const EventTimeline: React.FC = () => {
             {timelineItems.map((item) => (
               <div
                 key={item.id}
-                className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:shadow-xl hover:-translate-y-1"
+                className={`bg-white rounded-lg shadow-md overflow-hidden transform transition-all duration-300 ${activeItem === item.id
+                  ? 'scale-105 shadow-xl border-2 border-indigo-200'
+                  : 'hover:shadow-lg hover:-translate-y-1'
+                  }`}
+                onMouseEnter={() => setActiveItem(item.id)}
+                onMouseLeave={() => setActiveItem(null)}
               >
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-4">
                     <span className="text-sm font-medium text-indigo-600 bg-indigo-100 px-3 py-1 rounded-full">
                       {item.id}
                     </span>
-                    <span className="text-sm font-medium text-gray-600">
+                    <span className="text-sm font-medium text-gray-600 flex items-center">
+                      <Clock className="w-4 h-4 mr-1" />
                       {item.time}
                     </span>
                   </div>
@@ -215,13 +239,13 @@ const EventTimeline: React.FC = () => {
                   <h3 className="text-xl font-bold text-indigo-900 mb-2">{item.content}</h3>
 
                   <div className="flex items-center text-gray-600 mb-2">
-                    <Users className="w-4 h-4 mr-2" />
+                    <Users className="w-4 h-4 mr-2 text-indigo-500" />
                     <span>{item.responsible}</span>
                   </div>
 
                   {item.location && (
                     <div className="flex items-center text-gray-600 mb-4">
-                      <MapPin className="w-4 h-4 mr-2" />
+                      <MapPin className="w-4 h-4 mr-2 text-indigo-500" />
                       <span>{item.location}</span>
                     </div>
                   )}
@@ -229,11 +253,23 @@ const EventTimeline: React.FC = () => {
                   {item.description && (
                     <p className="text-gray-600 mb-4">{item.description}</p>
                   )}
+
+                  <div className="mt-4 pt-4 border-t border-gray-100">
+                    <button className="text-indigo-600 hover:text-indigo-800 text-sm font-medium transition-colors duration-300">
+                      Xem chi tiết →
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         )}
+
+        <div className="text-center mt-12">
+          <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+            Đăng Ký Tham Gia
+          </button>
+        </div>
       </div>
     </section>
   );
