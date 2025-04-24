@@ -3,6 +3,7 @@ import Navbar from './components/common/Navbar';
 import Hero from './components/home/Hero';
 import About from './components/home/About';
 import EventSchedule from './components/home/EventSchedule';
+import EventAgenda from './components/home/EventAgenda';
 import Gallery from './components/home/Gallery';
 import AlumniDirectory from './components/home/AlumniDirectory';
 // import MemoryWall from './components/home/MemoryWall';
@@ -26,6 +27,7 @@ function App() {
       <About />
       <Timeline />
       <EventSchedule />
+      <EventAgenda />
       <EventOrganizers />
       <Gallery />
       <AlumniDirectory />

@@ -49,7 +49,15 @@ const EventOrganizers: React.FC = () => {
       role: 'Ban Liên Lạc - 12I',
       info: 'Trung tâm GDNN - GDTX Buôn Hồ',
       phone: '0764656255',
-      image: '/images/contacts/kieu_hoa.jpg'
+      image: '/images/organizers/kieu_hoa.png'
+    },
+    {
+      id: 7,
+      name: 'Trịnh Xuân Khoa',
+      role: 'Ban Liên Lạc - 12G',
+      info: 'TP. Thủ Đức',
+      phone: '0908117237',
+      image: '/images/organizers/xuan_khoa.jpg'
     }
   ];
 
