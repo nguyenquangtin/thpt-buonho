@@ -2,18 +2,19 @@ import React from 'react';
 import Navbar from './components/common/Navbar';
 import Hero from './components/home/Hero';
 import About from './components/home/About';
-import EventSchedule from './components/home/EventSchedule';
-import EventAgenda from './components/home/EventAgenda';
 import Gallery from './components/home/Gallery';
 import AlumniDirectory from './components/home/AlumniDirectory';
+import EventTimeline from './components/home/EventTimeline';
 // import MemoryWall from './components/home/MemoryWall';
 // import News from './components/home/News';
-
+import EventOrganizers from './components/home/EventOrganizers';
 import Timeline from './components/home/Timeline';
 import RegistrationCTA from './components/home/RegistrationCTA';
 import Contact from './components/home/Contact';
 import Footer from './components/common/Footer';
-import EventOrganizers from './components/home/EventOrganizers';
+
+
+
 function App() {
   // Update document title
   React.useEffect(() => {
@@ -26,8 +27,9 @@ function App() {
       <Hero />
       <About />
       <Timeline />
-      <EventSchedule />
-      <EventAgenda />
+
+      <EventTimeline />
+
       <EventOrganizers />
       <Gallery />
       <AlumniDirectory />
