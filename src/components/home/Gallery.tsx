@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { galleryImages } from '../../data/mockData';
-import { X } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import Masonry from 'react-masonry-css';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const Gallery: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [currentSlideIndex, setCurrentSlideIndex] = useState<number>(0);
+  const sliderRef = useRef<Slider>(null);
 
   const categories = ['All', ...new Set(galleryImages.map(img => img.category))];
 
@@ -18,6 +23,61 @@ const Gallery: React.FC = () => {
     1100: 3,
     700: 2,
     500: 1
+  };
+
+  const handleImageClick = (src: string, index: number) => {
+    setSelectedImage(src);
+    setCurrentSlideIndex(index);
+  };
+
+  const handleClose = () => {
+    setSelectedImage(null);
+  };
+
+  const handleNext = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickNext();
+    }
+  };
+
+  const handlePrev = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickPrev();
+    }
+  };
+
+  const handleKeyDown = (e: KeyboardEvent) => {
+    if (selectedImage) {
+      switch (e.key) {
+        case 'ArrowLeft':
+          handlePrev();
+          break;
+        case 'ArrowRight':
+          handleNext();
+          break;
+        case 'Escape':
+          handleClose();
+          break;
+      }
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [selectedImage]);
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    initialSlide: currentSlideIndex,
+    arrows: false,
+    afterChange: (current: number) => setCurrentSlideIndex(current)
   };
 
   return (
@@ -55,11 +115,11 @@ const Gallery: React.FC = () => {
           className="flex -ml-4 w-auto"
           columnClassName="pl-4 bg-clip-padding"
         >
-          {filteredImages.map((image) => (
+          {filteredImages.map((image, index) => (
             <div
               key={image.id}
               className="mb-4 relative overflow-hidden rounded-lg shadow-md group cursor-pointer"
-              onClick={() => setSelectedImage(image.src)}
+              onClick={() => handleImageClick(image.src, index)}
             >
               <img
                 src={image.src}
@@ -87,16 +147,46 @@ const Gallery: React.FC = () => {
         {selectedImage && (
           <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4">
             <button
-              className="absolute top-4 right-4 text-white hover:text-amber-400"
-              onClick={() => setSelectedImage(null)}
+              className="absolute top-4 right-4 text-white hover:text-amber-400 z-10"
+              onClick={handleClose}
             >
               <X size={32} />
             </button>
-            <img
-              src={selectedImage}
-              alt="Ảnh phóng to"
-              className="max-h-[90vh] max-w-[90vw] object-contain"
-            />
+
+            <button
+              className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-amber-400 z-10 p-2 bg-black/50 rounded-full transition-transform hover:scale-110"
+              onClick={handlePrev}
+            >
+              <ChevronLeft size={40} />
+            </button>
+
+            <button
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-amber-400 z-10 p-2 bg-black/50 rounded-full transition-transform hover:scale-110"
+              onClick={handleNext}
+            >
+              <ChevronRight size={40} />
+            </button>
+
+            <div className="w-full max-w-4xl">
+              <Slider ref={sliderRef} {...settings}>
+                {filteredImages.map((image) => (
+                  <div key={image.id} className="px-2">
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="max-h-[80vh] w-full object-contain mx-auto"
+                    />
+                    <div className="text-white text-center mt-4">
+                      <h3 className="text-xl font-medium">{image.alt}</h3>
+                      <div className="flex justify-center items-center gap-4 mt-2">
+                        <span className="text-amber-300">{image.year}</span>
+                        <span className="bg-indigo-600 text-white text-xs px-2 py-1 rounded-full">{image.category}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </Slider>
+            </div>
           </div>
         )}
       </div>
