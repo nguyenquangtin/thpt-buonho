@@ -74,6 +74,14 @@ const EventOrganizers: React.FC = () => {
       info: 'Tp Buôn Ma Thuột',
       phone: '0979050787',
       image: '/images/organizers/huu_dieu.jpg'
+    },
+    {
+      id: 10,
+      name: 'Đoàn Thị Nhung',
+      role: 'Ban Liên Lạc - 12H',
+      info: 'Uỷ ban Kiểm tra Thị uỷ Buôn Hồ',
+      phone: '0972874747',
+      image: '/images/organizers/nhung.jpg'
     }
   ];
 
