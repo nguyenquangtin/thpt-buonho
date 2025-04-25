@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { galleryImages } from '../../data/mockData';
 import { X } from 'lucide-react';
+import Masonry from 'react-masonry-css';
 
 const Gallery: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -11,6 +12,13 @@ const Gallery: React.FC = () => {
   const filteredImages = selectedCategory === 'All'
     ? galleryImages
     : galleryImages.filter(img => img.category === selectedCategory);
+
+  const breakpointColumnsObj = {
+    default: 4,
+    1100: 3,
+    700: 2,
+    500: 1
+  };
 
   return (
     <section id="gallery" className="py-20 bg-white">
@@ -41,21 +49,23 @@ const Gallery: React.FC = () => {
           ))}
         </div>
 
-        {/* Gallery grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {/* Masonry Gallery */}
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className="flex -ml-4 w-auto"
+          columnClassName="pl-4 bg-clip-padding"
+        >
           {filteredImages.map((image) => (
             <div
               key={image.id}
-              className="relative overflow-hidden rounded-lg shadow-md group cursor-pointer"
+              className="mb-4 relative overflow-hidden rounded-lg shadow-md group cursor-pointer"
               onClick={() => setSelectedImage(image.src)}
             >
-              <div className="aspect-w-4 aspect-h-3">
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
-                />
-              </div>
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="w-full h-auto transition-transform duration-500 group-hover:scale-110"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
                 <span className="text-white font-medium">{image.alt}</span>
                 <div className="flex justify-between items-center mt-2">
@@ -65,7 +75,7 @@ const Gallery: React.FC = () => {
               </div>
             </div>
           ))}
-        </div>
+        </Masonry>
 
         <div className="text-center mt-12">
           <button className="bg-indigo-100 hover:bg-indigo-200 text-indigo-700 font-medium py-3 px-8 rounded-full transition-colors">
