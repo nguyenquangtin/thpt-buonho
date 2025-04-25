@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MapPin, Users, Calendar, Clock } from 'lucide-react';
+import useIsMobile from '../../hooks/useIsMobile';
 
 interface TimelineItem {
   id: string;
@@ -126,8 +127,30 @@ const timelineItems: TimelineItem[] = [
 ];
 
 const EventTimeline: React.FC = () => {
-  const [viewMode, setViewMode] = useState<'table' | 'cards'>('table');
+  const isMobile = useIsMobile();
+  const [viewMode, setViewMode] = useState<'table' | 'cards'>(isMobile ? 'cards' : 'table');
   const [activeItem, setActiveItem] = useState<string | null>(null);
+
+  useEffect(() => {
+    setViewMode(isMobile ? 'cards' : 'table');
+  }, [isMobile]);
+
+  const TimeDisplay: React.FC<{ time: string }> = ({ time }) => (
+    <div className="flex items-center">
+      <Clock className="w-4 h-4 mr-2 text-amber-500" />
+      <span className="font-semibold text-amber-600 bg-amber-50 px-2 py-1 rounded-md">
+        {time}
+      </span>
+    </div>
+  );
+
+  const ContentDisplay: React.FC<{ content: string }> = ({ content }) => (
+    <div className="flex items-start">
+      <span className="font-semibold text-indigo-900 bg-indigo-50 px-3 py-2 rounded-md">
+        {content}
+      </span>
+    </div>
+  );
 
   return (
     <section id="timeline" className="relative py-20 overflow-hidden">
@@ -177,17 +200,17 @@ const EventTimeline: React.FC = () => {
         </div>
 
         {viewMode === 'table' ? (
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
               <div className="overflow-x-auto">
                 <table className="min-w-full divide-y divide-gray-200">
                   <thead className="bg-indigo-50">
                     <tr>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-indigo-600 uppercase tracking-wider">STT</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-indigo-600 uppercase tracking-wider">Nội dung</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-indigo-600 uppercase tracking-wider">Thời gian</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-indigo-600 uppercase tracking-wider">Thực hiện</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-indigo-600 uppercase tracking-wider">Địa điểm</th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-indigo-600 uppercase tracking-wider w-[5%]">STT</th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-indigo-600 uppercase tracking-wider w-[40%]">Nội dung</th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-indigo-600 uppercase tracking-wider w-[15%]">Thời gian</th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-indigo-600 uppercase tracking-wider w-[20%]">Địa điểm</th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-indigo-600 uppercase tracking-wider w-[20%]">Thực hiện</th>
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
@@ -201,11 +224,15 @@ const EventTimeline: React.FC = () => {
                         onMouseEnter={() => setActiveItem(item.id)}
                         onMouseLeave={() => setActiveItem(null)}
                       >
-                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-indigo-600">{item.id}</td>
-                        <td className="px-6 py-4 text-sm text-gray-900">{item.content}</td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item.time}</td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item.responsible}</td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item.location}</td>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-indigo-600 w-[5%]">{item.id}</td>
+                        <td className="px-6 py-4 w-[40%]">
+                          <ContentDisplay content={item.content} />
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap w-[15%]">
+                          <TimeDisplay time={item.time} />
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 w-[20%]">{item.location}</td>
+                        <td className="px-6 py-4 text-sm text-gray-500 w-[20%] break-words">{item.responsible}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -230,13 +257,12 @@ const EventTimeline: React.FC = () => {
                     <span className="text-sm font-medium text-indigo-600 bg-indigo-100 px-3 py-1 rounded-full">
                       {item.id}
                     </span>
-                    <span className="text-sm font-medium text-gray-600 flex items-center">
-                      <Clock className="w-4 h-4 mr-1" />
-                      {item.time}
-                    </span>
+                    <TimeDisplay time={item.time} />
                   </div>
 
-                  <h3 className="text-xl font-bold text-indigo-900 mb-2">{item.content}</h3>
+                  <div className="mb-4">
+                    <ContentDisplay content={item.content} />
+                  </div>
 
                   <div className="flex items-center text-gray-600 mb-2">
                     <Users className="w-4 h-4 mr-2 text-indigo-500" />
@@ -253,12 +279,6 @@ const EventTimeline: React.FC = () => {
                   {item.description && (
                     <p className="text-gray-600 mb-4">{item.description}</p>
                   )}
-
-                  <div className="mt-4 pt-4 border-t border-gray-100">
-                    <button className="text-indigo-600 hover:text-indigo-800 text-sm font-medium transition-colors duration-300">
-                      Xem chi tiết →
-                    </button>
-                  </div>
                 </div>
               </div>
             ))}
