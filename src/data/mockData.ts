@@ -411,6 +411,35 @@ export const galleryImages: GalleryImage[] = [
   },
 
   {
+    id: "h123",
+    src: "/images/12h/1.jpg",
+    alt: "Lớp 12H - Ảnh 1",
+    year: 2005,
+    category: "12H",
+  },
+  {
+    id: "h124",
+    src: "/images/12h/2.jpg",
+    alt: "Lớp 12H - Ảnh 2",
+    year: 2005,
+    category: "12H",
+  },
+  {
+    id: "h125",
+    src: "/images/12h/3.jpg",
+    alt: "Lớp 12H - Ảnh 3",
+    year: 2005,
+    category: "12H",
+  },
+  {
+    id: "h126",
+    src: "/images/12h/4.jpg",
+    alt: "Lớp 12H - Ảnh 4",
+    year: 2005,
+    category: "12H",
+  },
+
+  {
     id: "105",
     src: "/images/12i/1.jpg",
     alt: "Lớp 12I - Ảnh 1",
