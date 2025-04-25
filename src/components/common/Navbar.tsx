@@ -19,7 +19,7 @@ const Navbar: React.FC = () => {
   const navLinks = [
     { name: 'Trang chủ', path: '#home' },
     { name: 'Thông tin', path: '#about' },
-    { name: 'Sự Kiện', path: '#events' },
+    { name: 'Lịch trình', path: '#timeline' },
     { name: 'BTC', path: '#organizers' },
     { name: 'Hình ảnh', path: '#gallery' },
     { name: 'Cựu Học Sinh', path: '#alumni' },
