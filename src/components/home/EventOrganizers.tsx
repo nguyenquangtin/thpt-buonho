@@ -58,6 +58,14 @@ const EventOrganizers: React.FC = () => {
       info: 'TP. Thủ Đức',
       phone: '0908117237',
       image: '/images/organizers/xuan_khoa.jpg'
+    },
+    {
+      id: 8,
+      name: 'H Nuết Kbuôr',
+      role: 'Ban Liên Lạc - 12A',
+      info: 'Trường THPT Hai Bà Trưng',
+      phone: '0946784143',
+      image: '/images/organizers/h_nuet_kbuor.jpg'
     }
   ];
 
@@ -88,7 +96,7 @@ const EventOrganizers: React.FC = () => {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-indigo-900 mb-1">{organizer.name}</h3>
+                <h3 className="text-base font-bold text-indigo-900 mb-1">{organizer.name}</h3>
                 <p className="text-amber-600 font-medium mb-4">{organizer.role}</p>
 
                 <div className="space-y-2">
