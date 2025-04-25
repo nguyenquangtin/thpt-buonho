@@ -66,6 +66,14 @@ const EventOrganizers: React.FC = () => {
       info: 'Trường THPT Hai Bà Trưng',
       phone: '0946784143',
       image: '/images/organizers/h_nuet_kbuor.jpg'
+    },
+    {
+      id: 9,
+      name: 'Nguyễn Hữu Diệu',
+      role: 'Ban Liên Lạc - 12F',
+      info: 'Tp Buôn Ma Thuột',
+      phone: '0979050787',
+      image: '/images/organizers/huu_dieu.jpg'
     }
   ];
 
