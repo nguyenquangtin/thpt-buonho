@@ -228,6 +228,15 @@ export const galleryImages: GalleryImage[] = [
     year: 2005,
     category: "12B",
   },
+
+  {
+    id: "e101",
+    src: "/images/12c/1.jpg",
+    alt: "Lớp 12C - Ảnh 1",
+    year: 2005,
+    category: "12C",
+  },
+
   {
     id: "102",
     src: "/images/12d/1.jpg",
@@ -242,6 +251,28 @@ export const galleryImages: GalleryImage[] = [
     alt: "Lớp 12D - Ảnh 2",
     year: 2005,
     category: "12D",
+  },
+
+  {
+    id: "e101",
+    src: "/images/12e/1.jpg",
+    alt: "Lớp 12E - Ảnh 1",
+    year: 2005,
+    category: "12E",
+  },
+  {
+    id: "e102",
+    src: "/images/12e/2.jpg",
+    alt: "Lớp 12E - Ảnh 2",
+    year: 2005,
+    category: "12E",
+  },
+  {
+    id: "e103",
+    src: "/images/12e/3.jpg",
+    alt: "Lớp 12E - Ảnh 3",
+    year: 2005,
+    category: "12E",
   },
 
   {
