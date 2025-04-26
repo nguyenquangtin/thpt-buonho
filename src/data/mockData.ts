@@ -539,13 +539,6 @@ export const galleryImages: GalleryImage[] = [
     category: "12K",
   },
   {
-    id: "41",
-    src: "/images/12k/14.jpg",
-    alt: "Lớp 12K - Ảnh 14",
-    year: 2005,
-    category: "12K",
-  },
-  {
     id: "42",
     src: "/images/12k/15.jpg",
     alt: "Lớp 12K - Ảnh 15",
