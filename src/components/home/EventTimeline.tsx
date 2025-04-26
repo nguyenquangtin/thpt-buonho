@@ -149,7 +149,7 @@ const EventTimeline: React.FC = () => {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-2xl mx-auto">
           <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
             <div className="overflow-x-auto">
               <table className="min-w-full divide-y divide-gray-200">
