@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { MapPin, Users, Calendar, Clock } from 'lucide-react';
-import useIsMobile from '../../hooks/useIsMobile';
+import React, { useState } from 'react';
+import { MapPin, Clock } from 'lucide-react';
 
 interface TimelineItem {
   id: string;
@@ -127,30 +126,7 @@ const timelineItems: TimelineItem[] = [
 ];
 
 const EventTimeline: React.FC = () => {
-  const isMobile = useIsMobile();
-  const [viewMode, setViewMode] = useState<'table' | 'cards'>(isMobile ? 'cards' : 'table');
   const [activeItem, setActiveItem] = useState<string | null>(null);
-
-  useEffect(() => {
-    setViewMode(isMobile ? 'cards' : 'table');
-  }, [isMobile]);
-
-  const TimeDisplay: React.FC<{ time: string }> = ({ time }) => (
-    <div className="flex items-center">
-      <Clock className="w-4 h-4 mr-2 text-amber-500" />
-      <span className="font-semibold text-amber-600 bg-amber-50 px-2 py-1 rounded-md">
-        {time}
-      </span>
-    </div>
-  );
-
-  const ContentDisplay: React.FC<{ content: string }> = ({ content }) => (
-    <div className="flex items-start">
-      <span className="font-semibold text-indigo-900 bg-indigo-50 px-3 py-2 rounded-md">
-        {content}
-      </span>
-    </div>
-  );
 
   return (
     <section id="timeline" className="relative py-20 overflow-hidden">
@@ -173,117 +149,59 @@ const EventTimeline: React.FC = () => {
           </p>
         </div>
 
-        {/* View mode toggle */}
-        <div className="flex justify-center mb-8">
-          <div className="inline-flex rounded-lg bg-white p-1 shadow-sm border border-gray-200">
-            <button
-              onClick={() => setViewMode('table')}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 ${viewMode === 'table'
-                ? 'bg-indigo-600 text-white shadow-md'
-                : 'text-gray-600 hover:bg-gray-100'
-                }`}
-            >
-              <Calendar className="inline-block w-4 h-4 mr-2" />
-              Bảng
-            </button>
-            <button
-              onClick={() => setViewMode('cards')}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 ${viewMode === 'cards'
-                ? 'bg-indigo-600 text-white shadow-md'
-                : 'text-gray-600 hover:bg-gray-100'
-                }`}
-            >
-              <Clock className="inline-block w-4 h-4 mr-2" />
-              Thẻ
-            </button>
-          </div>
-        </div>
-
-        {viewMode === 'table' ? (
-          <div className="max-w-6xl mx-auto">
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
-              <div className="overflow-x-auto">
-                <table className="min-w-full divide-y divide-gray-200">
-                  <thead className="bg-indigo-50">
-                    <tr>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-indigo-600 uppercase tracking-wider w-[5%]">STT</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-indigo-600 uppercase tracking-wider w-[40%]">Nội dung</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-indigo-600 uppercase tracking-wider w-[15%]">Thời gian</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-indigo-600 uppercase tracking-wider w-[20%]">Địa điểm</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-indigo-600 uppercase tracking-wider w-[20%]">Thực hiện</th>
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+            <div className="overflow-x-auto">
+              <table className="min-w-full divide-y divide-gray-200">
+                <thead className="bg-indigo-50">
+                  <tr>
+                    <th className="px-2 py-2 text-left text-xs font-medium text-indigo-600 uppercase tracking-wider w-[5%]">STT</th>
+                    <th className="px-2 py-2 text-left text-xs font-medium text-indigo-600 uppercase tracking-wider w-[40%]">Thời gian</th>
+                    <th className="px-2 py-2 text-left text-xs font-medium text-indigo-600 uppercase tracking-wider w-[55%]">Nội dung</th>
+                  </tr>
+                </thead>
+                <tbody className="bg-white divide-y divide-gray-200">
+                  {timelineItems.map((item) => (
+                    <tr
+                      key={item.id}
+                      className={`transition-all duration-300 ${activeItem === item.id
+                        ? 'bg-indigo-50 transform scale-[1.01]'
+                        : 'hover:bg-gray-50'
+                        }`}
+                      onMouseEnter={() => setActiveItem(item.id)}
+                      onMouseLeave={() => setActiveItem(null)}
+                    >
+                      <td className="px-4 py-4 whitespace-nowrap text-base font-medium text-indigo-600 w-[5%]">{item.id}</td>
+                      <td className="p-2 w-[40%]">
+                        <div className="flex flex-col">
+                          <div className="flex items-center">
+                            <Clock className="w-4 h-4 mr-2 text-amber-500" />
+                            <span className="text-base font-medium text-amber-600">
+                              {item.time}
+                            </span>
+                          </div>
+                          {item.location && (
+                            <div className="mt-2 text-sm text-gray-500">
+                              <span className="flex items-center">
+                                <MapPin className="w-4 h-4 mr-1" />
+                                {item.location}
+                              </span>
+                            </div>
+                          )}
+                        </div>
+                      </td>
+                      <td className="px-4 py-4 w-[55%]">
+                        <div className="text-base font-semibold text-indigo-900 bg-indigo-50 px-3 py-2 rounded-md">
+                          {item.content}
+                        </div>
+                      </td>
                     </tr>
-                  </thead>
-                  <tbody className="bg-white divide-y divide-gray-200">
-                    {timelineItems.map((item) => (
-                      <tr
-                        key={item.id}
-                        className={`transition-all duration-300 ${activeItem === item.id
-                          ? 'bg-indigo-50 transform scale-[1.02]'
-                          : 'hover:bg-gray-50'
-                          }`}
-                        onMouseEnter={() => setActiveItem(item.id)}
-                        onMouseLeave={() => setActiveItem(null)}
-                      >
-                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-indigo-600 w-[5%]">{item.id}</td>
-                        <td className="px-6 py-4 w-[40%]">
-                          <ContentDisplay content={item.content} />
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap w-[15%]">
-                          <TimeDisplay time={item.time} />
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 w-[20%]">{item.location}</td>
-                        <td className="px-6 py-4 text-sm text-gray-500 w-[20%] break-words">{item.responsible}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
-        ) : (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {timelineItems.map((item) => (
-              <div
-                key={item.id}
-                className={`bg-white rounded-lg shadow-md overflow-hidden transform transition-all duration-300 ${activeItem === item.id
-                  ? 'scale-105 shadow-xl border-2 border-indigo-200'
-                  : 'hover:shadow-lg hover:-translate-y-1'
-                  }`}
-                onMouseEnter={() => setActiveItem(item.id)}
-                onMouseLeave={() => setActiveItem(null)}
-              >
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-sm font-medium text-indigo-600 bg-indigo-100 px-3 py-1 rounded-full">
-                      {item.id}
-                    </span>
-                    <TimeDisplay time={item.time} />
-                  </div>
-
-                  <div className="mb-4">
-                    <ContentDisplay content={item.content} />
-                  </div>
-
-                  <div className="flex items-center text-gray-600 mb-2">
-                    <Users className="w-4 h-4 mr-2 text-indigo-500" />
-                    <span>{item.responsible}</span>
-                  </div>
-
-                  {item.location && (
-                    <div className="flex items-center text-gray-600 mb-4">
-                      <MapPin className="w-4 h-4 mr-2 text-indigo-500" />
-                      <span>{item.location}</span>
-                    </div>
-                  )}
-
-                  {item.description && (
-                    <p className="text-gray-600 mb-4">{item.description}</p>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
+        </div>
 
         <div className="text-center mt-12">
           <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
