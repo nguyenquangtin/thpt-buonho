@@ -144,12 +144,26 @@ const EventTimeline: React.FC = () => {
           </h2>
           <div className="h-1 w-24 bg-amber-500 mx-auto mb-6 transform transition-all duration-300 hover:scale-110"></div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Cùng xem lại lịch trình chi tiết của ngày hội ngộ. Từ những khoảnh khắc trang trọng đến những phút giây thân mật,
-            chúng ta sẽ cùng nhau tạo nên những kỷ niệm khó quên.
+            Hãy cùng nhau điểm qua những khoảnh khắc đặc biệt của ngày hội ngộ. Mỗi giây phút quý giá sẽ được ghi dấu, để 20 năm sau chúng ta lại có thêm những kỷ niệm đáng nhớ bên nhau.
           </p>
         </div>
 
         <div className="max-w-2xl mx-auto">
+          <div className="flex justify-end mb-4">
+            <a
+              href="/images/lich_trinh_su_kien.png"
+              target="_blank"
+              rel="noopener noreferrer"
+              download="lich_trinh_su_kien.png"
+              className="inline-flex items-center px-4 py-2 bg-amber-500 hover:bg-amber-600 text-white text-sm font-medium rounded-md transition-colors duration-300"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              Tải lịch trình
+            </a>
+          </div>
+
           <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
             <div className="overflow-x-auto">
               <table className="min-w-full divide-y divide-gray-200">
