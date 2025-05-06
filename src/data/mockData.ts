@@ -819,6 +819,20 @@ export const galleryImages: GalleryImage[] = [
     year: 2005,
     category: "12L",
   },
+  {
+    id: "28",
+    src: "/images/12l/28.jpg",
+    alt: "Lớp 12L - Ảnh 28",
+    year: 2005,
+    category: "12L",
+  },
+  {
+    id: "29",
+    src: "/images/12l/29.jpg",
+    alt: "Lớp 12L - Ảnh 29",
+    year: 2005,
+    category: "12L",
+  },
 ];
 
 export const newsItems: NewsItem[] = [
