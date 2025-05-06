@@ -7,7 +7,7 @@ import AlumniDirectory from './components/home/AlumniDirectory';
 import EventTimeline from './components/home/EventTimeline';
 import EventOrganizers from './components/home/EventOrganizers';
 import RegistrationCTA from './components/home/RegistrationCTA';
-import Contact from './components/home/Contact';
+// import Contact from './components/home/Contact';
 import Footer from './components/common/Footer';
 
 // import MemoryWall from './components/home/MemoryWall';

@@ -51,7 +51,7 @@ const About: React.FC = () => {
         <div className="mt-16 bg-indigo-900 text-white rounded-lg overflow-hidden shadow-xl">
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="p-8 md:p-12 flex flex-col justify-center">
-              <h3 className="text-2xl font-bold mb-4">Về lớp chúng ta</h3>
+              <h3 className="text-2xl font-bold mb-4">Về trường của chúng ta</h3>
               <p className="mb-4">
                 Khóa 2005 được biết đến với tinh thần học đường, thành tích học tập và các đội thể thao vô địch.
                 Khi tốt nghiệp, chúng ta đã bắt đầu tạo dấu ấn trên thế giới.

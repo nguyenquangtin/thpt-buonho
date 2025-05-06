@@ -48,11 +48,12 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-lg font-bold mb-4">Thông tin hội ngộ</h3>
             <ul className="space-y-2">
-              <li><Link href="#" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">Đăng ký</Link></li>
-              <li><Link href="#" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">Lịch trình</Link></li>
-              <li><Link href="#" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">Chỗ ở</Link></li>
-              <li><Link href="#" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">Thông tin di chuyển</Link></li>
-              <li><Link href="#" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">Câu hỏi thường gặp</Link></li>
+              <li><Link href="#organizers" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">Ban tổ chức</Link></li>
+              <li><Link href="#organizers" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">Đăng ký</Link></li>
+              <li><Link href="#timeline" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">Lịch trình</Link></li>
+              {/* <li><Link href="#" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">Chỗ ở</Link></li> */}
+              {/* <li><Link href="#" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">Thông tin di chuyển</Link></li>
+              <li><Link href="#" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">Câu hỏi thường gặp</Link></li> */}
             </ul>
           </div>
 

@@ -24,7 +24,7 @@ const Navbar: React.FC = () => {
     { name: 'Hình ảnh', path: '#gallery' },
     { name: 'Cựu Học Sinh', path: '#alumni' },
     // { name: 'Kỷ Niệm', path: '#memories' },
-    { name: 'Liên Hệ', path: '#contact' },
+    { name: 'Liên Hệ', path: '#organizers' },
   ];
 
   return (
