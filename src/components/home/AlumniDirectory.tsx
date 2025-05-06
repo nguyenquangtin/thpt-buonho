@@ -50,11 +50,11 @@ const AlumniDirectory: React.FC = () => {
         </div>
 
         {/* Alumni cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filteredAlumni.map((person) => (
             <div
               key={person.id}
-              className={`flip-card h-96 perspective cursor-pointer`}
+              className={`flip-card h-[28rem] perspective cursor-pointer`}
               onClick={() => toggleFlip(person.id)}
             >
               <div
@@ -64,7 +64,7 @@ const AlumniDirectory: React.FC = () => {
                 {/* Front of card */}
                 <div className="absolute inset-0 backface-hidden rounded-xl shadow-lg overflow-hidden bg-white">
                   <div
-                    className="h-48 bg-cover bg-center"
+                    className="h-72 bg-cover bg-center"
                     style={{ backgroundImage: `url(${person.image})` }}
                   ></div>
                   <div className="p-6">
@@ -87,7 +87,7 @@ const AlumniDirectory: React.FC = () => {
                 {/* Back of card */}
                 <div className="absolute inset-0 backface-hidden rounded-xl shadow-lg bg-indigo-800 text-white p-6 rotate-y-180">
                   <h3 className="text-xl font-bold mb-4">{person.name}</h3>
-                  <p className="mb-4">{person.bio}</p>
+                  <p className="mb-4 text-gray-200">{person.bio}</p>
 
                   <div className="mt-auto">
                     <h4 className="text-amber-300 font-medium mb-2">Kết nối với {person.name.split(' ')[3]}</h4>

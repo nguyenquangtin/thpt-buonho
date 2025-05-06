@@ -5,7 +5,7 @@ export const alumni: Alumnus[] = [
     id: "1",
     name: "Nguyễn Quang Tín (Tony)",
     graduationYear: 2005,
-    image: "/images/alumni/tony.jpg",
+    image: "/images/alumni/12k/tony.jpg",
     profession: "Software Engineer",
     location: "Đà Nẵng, Việt Nam",
     bio: "CTO at Ecomdy Media",
