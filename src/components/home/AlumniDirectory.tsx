@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { alumni } from '../../data/mockData';
-import { Search, MapPin, Briefcase, Facebook, Linkedin, Twitter, Instagram } from 'lucide-react';
+import { Search, MapPin, Briefcase, Facebook, Linkedin, Twitter, Instagram, Globe } from 'lucide-react';
 
 const AlumniDirectory: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -90,7 +90,7 @@ const AlumniDirectory: React.FC = () => {
                   <p className="mb-4">{person.bio}</p>
 
                   <div className="mt-auto">
-                    <h4 className="text-amber-300 font-medium mb-2">Kết nối với {person.name.split(' ')[0]}</h4>
+                    <h4 className="text-amber-300 font-medium mb-2">Kết nối với {person.name.split(' ')[3]}</h4>
                     <div className="flex space-x-3">
                       {person.socialLinks?.linkedin && (
                         <a href={person.socialLinks.linkedin} className="hover:text-amber-300" target="_blank" rel="noopener noreferrer">
@@ -110,6 +110,11 @@ const AlumniDirectory: React.FC = () => {
                       {person.socialLinks?.instagram && (
                         <a href={person.socialLinks.instagram} className="hover:text-amber-300" target="_blank" rel="noopener noreferrer">
                           <Instagram className="w-5 h-5" />
+                        </a>
+                      )}
+                      {person.socialLinks?.website && (
+                        <a href={person.socialLinks.website} className="hover:text-amber-300" target="_blank" rel="noopener noreferrer">
+                          <Globe className="w-5 h-5" />
                         </a>
                       )}
                     </div>

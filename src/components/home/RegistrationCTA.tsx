@@ -19,7 +19,7 @@ const RegistrationCTA: React.FC = () => {
               <div className="flex items-center">
                 <Calendar className="h-8 w-8 mr-4 text-amber-300" />
                 <div>
-                  <h3 className="font-bold">15-17/06/2025</h3>
+                  <h3 className="font-bold">15/06/2025</h3>
                   <p className="opacity-80">Đánh dấu lịch</p>
                 </div>
               </div>
@@ -43,15 +43,12 @@ const RegistrationCTA: React.FC = () => {
 
             <div className="text-center">
               <div className="bg-amber-400 text-indigo-900 inline-block px-4 py-2 rounded-full mb-6">
-                <span className="font-bold">Đăng ký sớm:</span> 800.000đ đến hết ngày 01/03/2025
+                <span className="font-bold">Đăng ký:</span> 1.000.000đ đến hết ngày 30/05/2025
               </div>
 
               <div className="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:space-x-4 justify-center">
                 <button className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105">
                   Đăng ký ngay
-                </button>
-                <button className="bg-transparent hover:bg-white/10 text-white border border-white font-bold py-3 px-8 rounded-full transition-all duration-300">
-                  Tìm hiểu thêm
                 </button>
               </div>
             </div>

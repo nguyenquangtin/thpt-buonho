@@ -11,6 +11,7 @@ export interface Alumnus {
     facebook?: string;
     twitter?: string;
     instagram?: string;
+    website?: string;
   };
 }
 

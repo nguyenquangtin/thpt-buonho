@@ -33,7 +33,7 @@ function App() {
       <RegistrationCTA />
       {/* <MemoryWall /> */}
       {/* <News /> */}
-      <Contact />
+      {/* <Contact /> */}
       <Footer />
     </div>
   );
