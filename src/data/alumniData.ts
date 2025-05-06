@@ -18,16 +18,14 @@ export const alumni: Alumnus[] = [
   },
   {
     id: "2",
-    name: "Nguyễn Quang Tín (Tony)",
+    name: "Như Diễm",
     graduationYear: 2005,
-    image:
-      "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=600",
-    profession: "Marketing Director",
-    location: "New York, NY",
-    bio: 'I"ve spent the last 15 years in marketing and recently became a director at a global agency.',
+    image: "/images/alumni/12k/diempham.jpg",
+    profession: "AD SunLife Việt Nam",
+    location: "Đà Nẵng, Việt Nam",
+    bio: "0702589499<br /> 12K",
     socialLinks: {
-      linkedin: "https://linkedin.com",
-      instagram: "https://instagram.com",
+      facebook: "https://www.facebook.com/diem.pham.718702",
     },
   },
   {
