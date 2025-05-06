@@ -1,19 +1,19 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { galleryImages } from '../../data/mockData';
-import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, Image, Layers, Filter } from 'lucide-react';
 import Masonry from 'react-masonry-css';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 const Gallery: React.FC = () => {
+  const ALL_IMAGES = 'Tất cả';
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [selectedCategory, setSelectedCategory] = useState<string>(ALL_IMAGES);
   const [currentSlideIndex, setCurrentSlideIndex] = useState<number>(0);
   const [showAllImages, setShowAllImages] = useState<boolean>(false);
   const sliderRef = useRef<Slider>(null);
-
-  const categories = ['All', ...new Set(galleryImages.map(img => img.category))];
+  const categories = [ALL_IMAGES, ...new Set(galleryImages.map(img => img.category))];
 
   // Function to get random images
   const getRandomImages = (images: typeof galleryImages, count: number) => {
@@ -22,10 +22,10 @@ const Gallery: React.FC = () => {
   };
 
   // Get initial random images
-  const initialImages = getRandomImages(galleryImages, 20);
+  const initialImages = getRandomImages(galleryImages, 30);
 
   // Filter images based on category and showAllImages state
-  const filteredImages = selectedCategory === 'All'
+  const filteredImages = selectedCategory === ALL_IMAGES
     ? (showAllImages ? galleryImages : initialImages)
     : galleryImages.filter(img => img.category === selectedCategory);
 
@@ -99,9 +99,26 @@ const Gallery: React.FC = () => {
             Hành Trình Kỷ Niệm
           </h2>
           <div className="h-1 w-24 bg-amber-500 mx-auto mb-6"></div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          {/* <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-6">
             Cùng ngược dòng thời gian với những bức ảnh từ thời cấp ba của chúng ta.
-          </p>
+          </p> */}
+          <div className="max-w-2xl mx-auto bg-indigo-50 rounded-xl p-6">
+            <h3 className="text-lg font-semibold text-indigo-900 mb-4">Hướng dẫn xem ảnh:</h3>
+            <ul className="space-y-3 text-left">
+              <li className="flex items-start">
+                <Image className="w-5 h-5 text-amber-500 mt-1 mr-3 flex-shrink-0" />
+                <span className="text-gray-700">Album sẽ hiển thị <span className="font-semibold text-indigo-700">30 bức ảnh ngẫu nhiên</span> khi bạn truy cập</span>
+              </li>
+              <li className="flex items-start">
+                <Layers className="w-5 h-5 text-amber-500 mt-1 mr-3 flex-shrink-0" />
+                <span className="text-gray-700">Nhấn <span className="font-semibold text-indigo-700">"Xem Toàn Bộ Album"</span> để xem tất cả ảnh</span>
+              </li>
+              <li className="flex items-start">
+                <Filter className="w-5 h-5 text-amber-500 mt-1 mr-3 flex-shrink-0" />
+                <span className="text-gray-700">Chọn tên lớp để xem ảnh của lớp đó</span>
+              </li>
+            </ul>
+          </div>
         </div>
 
         {/* Category filters */}
