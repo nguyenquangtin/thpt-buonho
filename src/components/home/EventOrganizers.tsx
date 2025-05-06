@@ -82,6 +82,14 @@ const EventOrganizers: React.FC = () => {
       info: 'Uỷ ban Kiểm tra Thị uỷ Buôn Hồ',
       phone: '0972874747',
       image: '/images/organizers/nhung.jpg'
+    },
+    {
+      id: 11,
+      name: 'Trần Cao Đẳng',
+      role: 'Ban Liên Lạc - 12C',
+      info: 'Buôn Hồ',
+      phone: '0907468039',
+      image: '/images/organizers/dang.jpg'
     }
   ];
 
