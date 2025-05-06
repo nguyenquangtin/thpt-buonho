@@ -87,7 +87,10 @@ const AlumniDirectory: React.FC = () => {
                 {/* Back of card */}
                 <div className="absolute inset-0 backface-hidden rounded-xl shadow-lg bg-indigo-800 text-white p-6 rotate-y-180">
                   <h3 className="text-xl font-bold mb-4">{person.name}</h3>
-                  <p className="mb-4 text-gray-200">{person.bio}</p>
+                  <div
+                    className="mb-4 text-gray-200 prose prose-invert max-w-none"
+                    dangerouslySetInnerHTML={{ __html: person.bio }}
+                  />
 
                   <div className="mt-auto">
                     <h4 className="text-amber-300 font-medium mb-2">Kết nối với {person.name.split(' ')[3]}</h4>

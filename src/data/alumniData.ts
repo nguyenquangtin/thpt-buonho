@@ -8,7 +8,7 @@ export const alumni: Alumnus[] = [
     image: "/images/alumni/12k/tony.jpg",
     profession: "Software Engineer",
     location: "Đà Nẵng, Việt Nam",
-    bio: "CTO at Ecomdy Media",
+    bio: "CTO tại Ecomdy Media. <br />Cựu học sinh lớp 12K. ",
     socialLinks: {
       linkedin: "https://www.linkedin.com/in/tonytinnguyen/",
       facebook: "https://www.facebook.com/nguyenquangtin/",
@@ -18,7 +18,7 @@ export const alumni: Alumnus[] = [
   },
   {
     id: "2",
-    name: "Sarah Johnson",
+    name: "Nguyễn Quang Tín (Tony)",
     graduationYear: 2005,
     image:
       "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=600",

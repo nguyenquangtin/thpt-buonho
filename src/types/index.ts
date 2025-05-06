@@ -5,7 +5,7 @@ export interface Alumnus {
   image: string;
   profession: string;
   location: string;
-  bio: string;
+  bio: string; // Can contain HTML content
   socialLinks?: {
     linkedin?: string;
     facebook?: string;
