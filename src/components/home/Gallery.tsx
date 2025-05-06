@@ -10,12 +10,23 @@ const Gallery: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [currentSlideIndex, setCurrentSlideIndex] = useState<number>(0);
+  const [showAllImages, setShowAllImages] = useState<boolean>(false);
   const sliderRef = useRef<Slider>(null);
 
   const categories = ['All', ...new Set(galleryImages.map(img => img.category))];
 
+  // Function to get random images
+  const getRandomImages = (images: typeof galleryImages, count: number) => {
+    const shuffled = [...images].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+  };
+
+  // Get initial random images
+  const initialImages = getRandomImages(galleryImages, 20);
+
+  // Filter images based on category and showAllImages state
   const filteredImages = selectedCategory === 'All'
-    ? galleryImages
+    ? (showAllImages ? galleryImages : initialImages)
     : galleryImages.filter(img => img.category === selectedCategory);
 
   const breakpointColumnsObj = {
@@ -102,7 +113,10 @@ const Gallery: React.FC = () => {
                 ? 'bg-indigo-700 text-white'
                 : 'bg-indigo-100 text-indigo-700 hover:bg-indigo-200'
                 }`}
-              onClick={() => setSelectedCategory(category)}
+              onClick={() => {
+                setSelectedCategory(category);
+                setShowAllImages(false);
+              }}
             >
               {category}
             </button>
@@ -138,8 +152,11 @@ const Gallery: React.FC = () => {
         </Masonry>
 
         <div className="text-center mt-12">
-          <button className="bg-indigo-100 hover:bg-indigo-200 text-indigo-700 font-medium py-3 px-8 rounded-full transition-colors">
-            Xem Toàn Bộ Album
+          <button
+            className="bg-indigo-100 hover:bg-indigo-200 text-indigo-700 font-medium py-3 px-8 rounded-full transition-colors"
+            onClick={() => setShowAllImages(!showAllImages)}
+          >
+            {showAllImages ? 'Ẩn Bớt Ảnh' : 'Xem Toàn Bộ Album'}
           </button>
         </div>
 
