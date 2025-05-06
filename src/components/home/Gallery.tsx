@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { galleryImages } from '../../data/mockData';
 import { X, ChevronLeft, ChevronRight, Image, Layers, Filter } from 'lucide-react';
 import Masonry from 'react-masonry-css';
@@ -21,13 +21,15 @@ const Gallery: React.FC = () => {
     return shuffled.slice(0, count);
   };
 
-  // Get initial random images
-  const initialImages = getRandomImages(galleryImages, 30);
+  // Get initial random images using useMemo to prevent regeneration on every render
+  const initialImages = useMemo(() => getRandomImages(galleryImages, 30), []);
 
   // Filter images based on category and showAllImages state
-  const filteredImages = selectedCategory === ALL_IMAGES
-    ? (showAllImages ? galleryImages : initialImages)
-    : galleryImages.filter(img => img.category === selectedCategory);
+  const filteredImages = useMemo(() => {
+    return selectedCategory === ALL_IMAGES
+      ? (showAllImages ? galleryImages : initialImages)
+      : galleryImages.filter(img => img.category === selectedCategory);
+  }, [selectedCategory, showAllImages, initialImages]);
 
   const breakpointColumnsObj = {
     default: 4,
@@ -36,8 +38,10 @@ const Gallery: React.FC = () => {
     500: 1
   };
 
-  const handleImageClick = (src: string, index: number) => {
+  const handleImageClick = (src: string, imageId: string) => {
     setSelectedImage(src);
+    // Find the index of the clicked image in the filtered images array
+    const index = filteredImages.findIndex(img => img.id === imageId);
     setCurrentSlideIndex(index);
   };
 
@@ -146,11 +150,11 @@ const Gallery: React.FC = () => {
           className="flex -ml-4 w-auto"
           columnClassName="pl-4 bg-clip-padding"
         >
-          {filteredImages.map((image, index) => (
+          {filteredImages.map((image) => (
             <div
               key={image.id}
               className="mb-4 relative overflow-hidden rounded-lg shadow-md group cursor-pointer"
-              onClick={() => handleImageClick(image.src, index)}
+              onClick={() => handleImageClick(image.src, image.id)}
             >
               <img
                 src={image.src}
