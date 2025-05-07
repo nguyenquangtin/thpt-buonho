@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-lg font-bold mb-4">Liên kết nhanh</h3>
             <ul className="space-y-2">
-              <li><Link href="#home" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">Trang chủ</Link></li>
+              <li><Link href="/" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">Trang chủ</Link></li>
               <li><Link href="#about" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">Thông tin</Link></li>
               <li><Link href="#events" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">Sự kiện</Link></li>
               <li><Link href="#gallery" className="opacity-80 hover:opacity-100 hover:text-amber-400 transition-colors">Hình ảnh</Link></li>

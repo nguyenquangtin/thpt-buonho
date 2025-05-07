@@ -35,10 +35,12 @@ const Navbar: React.FC = () => {
         }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <div className="flex items-center space-x-2">
-          <School className="h-8 w-8" />
-          <span className="text-xl font-bold">THPT Krông Buk</span>
-        </div>
+        <a href="#home" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
+          <div className="flex items-center space-x-2">
+            <School className="h-8 w-8" />
+            <span className="text-xl font-bold">THPT Krông Buk</span>
+          </div>
+        </a>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-6">
