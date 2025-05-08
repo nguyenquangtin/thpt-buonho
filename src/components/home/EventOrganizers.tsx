@@ -90,6 +90,14 @@ const EventOrganizers: React.FC = () => {
       info: 'Buôn Hồ',
       phone: '0907468039',
       image: '/images/organizers/dang.jpg'
+    },
+    {
+      id: 12,
+      name: 'Nguyễn thị Ngọc Hà',
+      role: 'Ban Liên Lạc - 12M',
+      info: 'BIDV - Gia Nghĩa, Đăk Nông',
+      phone: '0948143454',
+      image: '/images/organizers/ngoc_ha.jpg'
     }
   ];
 
