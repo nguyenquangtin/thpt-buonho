@@ -138,9 +138,14 @@ const AlumniDirectory: React.FC = () => {
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-indigo-700 hover:bg-indigo-800 text-white font-bold py-3 px-8 rounded-full transition-all duration-300">
+          <a
+            href="https://ecomdycom.sg.larksuite.com/share/base/form/shrus00ry8TIWvf1LcqEgS5NPzh"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-indigo-700 hover:bg-indigo-800 text-white font-bold py-3 px-8 rounded-full transition-all duration-300"
+          >
             Tham Gia Danh Sách
-          </button>
+          </a>
         </div>
       </div>
     </section>
