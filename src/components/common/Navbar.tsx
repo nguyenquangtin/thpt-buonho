@@ -24,7 +24,8 @@ const Navbar: React.FC = () => {
     { name: 'Hình ảnh', path: '#gallery' },
     { name: 'Cựu Học Sinh', path: '#alumni' },
     // { name: 'Kỷ Niệm', path: '#memories' },
-    { name: 'Liên Hệ', path: '#organizers' },
+    // { name: 'Liên Hệ', path: '#organizers' },
+    { name: 'Thư ngõ', path: '/document/thu_ngo.jpg', download: true },
   ];
 
   return (
@@ -50,6 +51,7 @@ const Navbar: React.FC = () => {
               href={link.path}
               className={`hover:text-amber-400 transition-colors ${isScrolled ? 'text-white' : 'text-white'
                 }`}
+              {...(link.download ? { download: true } : {})}
             >
               {link.name}
             </Link>
@@ -81,6 +83,7 @@ const Navbar: React.FC = () => {
                 href={link.path}
                 className="block py-2 hover:text-amber-400 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
+                {...(link.download ? { download: true } : {})}
               >
                 {link.name}
               </Link>
