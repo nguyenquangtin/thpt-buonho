@@ -2,6 +2,7 @@ export interface Alumnus {
   id: string;
   name: string;
   graduationYear: number;
+  class: string;
   image: string;
   profession: string;
   location: string;

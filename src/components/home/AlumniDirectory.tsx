@@ -68,7 +68,12 @@ const AlumniDirectory: React.FC = () => {
                     style={{ backgroundImage: `url(${person.image})` }}
                   ></div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-indigo-900 mb-2">{person.name}</h3>
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="text-xl font-bold text-indigo-900">{person.name}</h3>
+                      <span className="bg-indigo-100 text-indigo-800 text-sm font-medium px-2.5 py-0.5 rounded">
+                        {person.class}
+                      </span>
+                    </div>
 
                     <div className="flex items-center text-gray-600 mb-2">
                       <Briefcase className="w-4 h-4 mr-2 text-indigo-600" />
