@@ -25,7 +25,7 @@ const Navbar: React.FC = () => {
     { name: 'Cựu Học Sinh', path: '#alumni' },
     // { name: 'Kỷ Niệm', path: '#memories' },
     // { name: 'Liên Hệ', path: '#organizers' },
-    { name: 'Thư ngõ', path: '/document/thu_ngo.jpg', download: true },
+    { name: 'Thư ngõ', path: '/document/thu_ngo_v2.pdf', download: true },
   ];
 
   return (
