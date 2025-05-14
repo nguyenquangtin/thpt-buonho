@@ -391,7 +391,7 @@ export const alumni: Alumnus[] = [
     graduationYear: 2005,
     class: "12K",
     image: "/images/alumni/12k/thanh_hong.jpg",
-    profession: "Tài chính - BV Đa khoa Thị xã Buôn Hồ",
+    profession: "Tài chính - BV Buôn Hồ",
     location: "Buôn Hồ",
     bio: "0976780809 <br />thanhhongbvbh@gmail.com",
     socialLinks: {},
