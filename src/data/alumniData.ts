@@ -384,4 +384,40 @@ export const alumni: Alumnus[] = [
     bio: "0932493349	<br />loantran0207@gmail.com <br />Freelancer Social Media, e-commerce<br /> Dẫu biết ai cũng đang bộn bề với công việc, gia đình, với trăm mối lo toan của cuộc sống... Nhưng 20 năm là một chặng đường dài kể từ ngày mình ra trường, là cột mốc rất đặc biệt mà không phải ai cũng có cơ hội để ngồi lại với nhau. Lớp chúng mình – 12H – đã từng là những cô cậu học trò nghịch ngợm, ngông cuồng, đôi khi rụt rè, cũng có lúc giận hờn, xích mích vì những chuyện không đâu thời trẻ trâu. Nhưng chắc hẳn trong mỗi người vẫn có một góc ký ức đẹp về những ngày tháng ấy. Có thể bây giờ mọi người thấy ngại, thấy xa cách sau 20 năm không liên lạc, bận rộn với công việc và gia đình hoặc đơn giản là chưa có hứng. 20 năm là 01 cột mốc không dễ gì có lại lần thứ hai. Mong mọi người sắp xếp tham gia nhé. Love ",
     socialLinks: {},
   },
+
+  {
+    id: "32",
+    name: "Nguyễn Thị Thanh Hồng",
+    graduationYear: 2005,
+    class: "12K",
+    image: "/images/alumni/12k/thanh_hong.jpg",
+    profession: "Tài chính - BV Đa khoa Thị xã Buôn Hồ",
+    location: "Buôn Hồ",
+    bio: "0976780809 <br />thanhhongbvbh@gmail.com",
+    socialLinks: {},
+  },
+
+  {
+    id: "33",
+    name: "Trịnh Tuấn Đạt",
+    graduationYear: 2005,
+    class: "12D",
+    image: "/images/alumni/12d/tuan_dat.jpg",
+    profession: "Dịch vụ -  Kim Ngân Giao",
+    location: "Tp.HCM",
+    bio: "0907084886<br />lgiang1010@gmail.com<br />chào tất cả các bạn!",
+    socialLinks: {},
+  },
+
+  {
+    id: "35",
+    name: "Vương Phương Thúy",
+    graduationYear: 2005,
+    class: "12I",
+    image: "/images/alumni/12i/vuong_thuy.jpg",
+    profession: "Khác",
+    location: "Tp.HCM",
+    bio: "0962657305<br />thuyvuong31su@gmail.com",
+    socialLinks: {},
+  },
 ];
