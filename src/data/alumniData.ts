@@ -302,7 +302,7 @@ export const alumni: Alumnus[] = [
   },
 
   {
-    id: "25",
+    id: "26",
     name: "Trần Thị Thanh Thủy",
     graduationYear: 2005,
     class: "12D",
@@ -314,7 +314,7 @@ export const alumni: Alumnus[] = [
   },
 
   {
-    id: "26",
+    id: "27",
     name: "Nguyễn Đình Vinh",
     graduationYear: 2005,
     class: "12K",
@@ -326,7 +326,7 @@ export const alumni: Alumnus[] = [
   },
 
   {
-    id: "27",
+    id: "28",
     name: "Trần Thị Ngọc Hiền",
     graduationYear: 2005,
     class: "12K",
@@ -338,7 +338,7 @@ export const alumni: Alumnus[] = [
   },
 
   {
-    id: "28",
+    id: "29",
     name: "Nguyễn Thị Kim Thảo",
     graduationYear: 2005,
     class: "12K",
@@ -350,7 +350,7 @@ export const alumni: Alumnus[] = [
   },
 
   {
-    id: "29",
+    id: "30",
     name: "Nguyễn Thị Trúc Ly",
     graduationYear: 2005,
     class: "12K",
@@ -362,7 +362,7 @@ export const alumni: Alumnus[] = [
   },
 
   {
-    id: "30",
+    id: "31",
     name: "Nguyễn Thi Thu Hương",
     graduationYear: 2005,
     class: "12D",
@@ -374,7 +374,7 @@ export const alumni: Alumnus[] = [
   },
 
   {
-    id: "31",
+    id: "32",
     name: "Trần Phương Loan",
     graduationYear: 2005,
     class: "12H",
@@ -386,7 +386,7 @@ export const alumni: Alumnus[] = [
   },
 
   {
-    id: "32",
+    id: "33",
     name: "Nguyễn Thị Thanh Hồng",
     graduationYear: 2005,
     class: "12K",
@@ -398,7 +398,7 @@ export const alumni: Alumnus[] = [
   },
 
   {
-    id: "33",
+    id: "34",
     name: "Trịnh Tuấn Đạt",
     graduationYear: 2005,
     class: "12D",

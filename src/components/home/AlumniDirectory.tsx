@@ -1,16 +1,23 @@
 import React, { useState } from 'react';
-import { alumni } from '../../data/mockData';
+import { alumni } from '../../data/alumniData';
 import { Search, MapPin, Briefcase, Facebook, Linkedin, Twitter, Instagram, Globe } from 'lucide-react';
 
 const AlumniDirectory: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [flippedCards, setFlippedCards] = useState<string[]>([]);
 
-  const filteredAlumni = alumni.filter(person =>
-    person.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    person.profession.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    person.location.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredAlumni = alumni.filter(person => {
+    const searchLower = searchTerm.toLowerCase().trim();
+    if (!searchLower) return true;
+
+    const nameMatch = person.name?.toLowerCase().includes(searchLower) || false;
+    const professionMatch = person.profession?.toLowerCase().includes(searchLower) || false;
+    const locationMatch = person.location?.toLowerCase().includes(searchLower) || false;
+    const classMatch = person.class?.toLowerCase().includes(searchLower) || false;
+    const bioMatch = person.bio?.toLowerCase().includes(searchLower) || false;
+
+    return nameMatch || professionMatch || locationMatch || classMatch || bioMatch;
+  });
 
   const toggleFlip = (id: string) => {
     setFlippedCards(prev =>
