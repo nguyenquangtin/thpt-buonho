@@ -214,6 +214,53 @@ export const galleryImages: GalleryImage[] = [
     year: 2005,
     category: "12C",
   },
+
+  // add 12c image from 11 to 16 here
+  {
+    id: "c111",
+    src: "/images/12c/11.jpg",
+    alt: "Lớp 12C - Ảnh 11",
+    year: 2005,
+    category: "12C",
+  },
+  {
+    id: "c112",
+    src: "/images/12c/12.jpg",
+    alt: "Lớp 12C - Ảnh 12",
+    year: 2005,
+    category: "12C",
+  },
+  {
+    id: "c113",
+    src: "/images/12c/13.jpg",
+    alt: "Lớp 12C - Ảnh 13",
+    year: 2005,
+    category: "12C",
+  },
+
+  {
+    id: "c114",
+    src: "/images/12c/14.jpg",
+    alt: "Lớp 12C - Ảnh 14",
+    year: 2005,
+    category: "12C",
+  },
+  {
+    id: "c115",
+    src: "/images/12c/15.jpg",
+    alt: "Lớp 12C - Ảnh 15",
+    year: 2005,
+    category: "12C",
+  },
+
+  {
+    id: "c116",
+    src: "/images/12c/16.jpg",
+    alt: "Lớp 12C - Ảnh 16",
+    year: 2005,
+    category: "12C",
+  },
+
   {
     id: "102",
     src: "/images/12d/1.jpg",
@@ -809,6 +856,49 @@ export const galleryImages: GalleryImage[] = [
     alt: "Lớp 12L - Ảnh 29",
     year: 2005,
     category: "12L",
+  },
+
+  {
+    id: "m101",
+    src: "/images/12m/1.jpg",
+    alt: "Lớp 12M - Ảnh 1",
+    year: 2005,
+    category: "12M",
+  },
+  {
+    id: "m102",
+    src: "/images/12m/2.jpg",
+    alt: "Lớp 12M - Ảnh 2",
+    year: 2005,
+    category: "12M",
+  },
+  {
+    id: "m103",
+    src: "/images/12m/3.jpg",
+    alt: "Lớp 12M - Ảnh 3",
+    year: 2005,
+    category: "12M",
+  },
+  {
+    id: "m104",
+    src: "/images/12m/4.jpg",
+    alt: "Lớp 12M - Ảnh 4",
+    year: 2005,
+    category: "12M",
+  },
+  {
+    id: "m105",
+    src: "/images/12m/5.jpg",
+    alt: "Lớp 12M - Ảnh 5",
+    year: 2005,
+    category: "12M",
+  },
+  {
+    id: "m106",
+    src: "/images/12m/6.jpg",
+    alt: "Lớp 12M - Ảnh 6",
+    year: 2005,
+    category: "12M",
   },
 ];
 
