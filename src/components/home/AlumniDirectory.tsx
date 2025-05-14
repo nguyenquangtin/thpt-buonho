@@ -115,6 +115,7 @@ const AlumniDirectory: React.FC = () => {
             <Heart className="w-5 h-5" />
             Find your crush ❤️
           </button>
+          <p className="text-sm text-gray-500">Chức năng này cho vui thôi nha 🤣</p>
         </div>
 
         {/* Floating hearts container */}
