@@ -1,23 +1,77 @@
 import React, { useState } from 'react';
 import { alumni } from '../../data/alumniData';
-import { Search, MapPin, Briefcase, Facebook, Linkedin, Twitter, Instagram, Globe } from 'lucide-react';
+import { Search, MapPin, Briefcase, Facebook, Linkedin, Twitter, Instagram, Globe, Heart } from 'lucide-react';
 
 const AlumniDirectory: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [flippedCards, setFlippedCards] = useState<string[]>([]);
+  const [showHearts, setShowHearts] = useState(false);
+  const [randomAlumni, setRandomAlumni] = useState<string | null>(null);
+  const [displayedAlumni, setDisplayedAlumni] = useState(alumni);
 
-  const filteredAlumni = alumni.filter(person => {
-    const searchLower = searchTerm.toLowerCase().trim();
-    if (!searchLower) return true;
+  // Function to generate random hearts
+  const generateHearts = () => {
+    const hearts = [];
+    for (let i = 0; i < 20; i++) {
+      const size = Math.random() * 20 + 10;
+      const left = Math.random() * 100;
+      const animationDuration = Math.random() * 3 + 2;
+      const delay = Math.random() * 2;
+      hearts.push(
+        <div
+          key={i}
+          className="absolute text-pink-500 animate-float"
+          style={{
+            left: `${left}%`,
+            fontSize: `${size}px`,
+            animationDuration: `${animationDuration}s`,
+            animationDelay: `${delay}s`,
+          }}
+        >
+          ❤️
+        </div>
+      );
+    }
+    return hearts;
+  };
 
-    const nameMatch = person.name?.toLowerCase().includes(searchLower) || false;
-    const professionMatch = person.profession?.toLowerCase().includes(searchLower) || false;
-    const locationMatch = person.location?.toLowerCase().includes(searchLower) || false;
-    const classMatch = person.class?.toLowerCase().includes(searchLower) || false;
-    const bioMatch = person.bio?.toLowerCase().includes(searchLower) || false;
+  const findCrush = () => {
+    setShowHearts(true);
+    const randomIndex = Math.floor(Math.random() * alumni.length);
+    const selectedAlumni = alumni[randomIndex];
+    setRandomAlumni(selectedAlumni.id);
 
-    return nameMatch || professionMatch || locationMatch || classMatch || bioMatch;
-  });
+    // Filter to show only the selected alumni
+    setDisplayedAlumni([selectedAlumni]);
+
+    // Reset after 3 seconds
+    setTimeout(() => {
+      setShowHearts(false);
+      setRandomAlumni(null);
+      setDisplayedAlumni(alumni);
+    }, 3000);
+  };
+
+  // Update displayed alumni when search term changes
+  React.useEffect(() => {
+    if (searchTerm) {
+      const filtered = alumni.filter(person => {
+        const searchLower = searchTerm.toLowerCase().trim();
+        if (!searchLower) return true;
+
+        const nameMatch = person.name?.toLowerCase().includes(searchLower) || false;
+        const professionMatch = person.profession?.toLowerCase().includes(searchLower) || false;
+        const locationMatch = person.location?.toLowerCase().includes(searchLower) || false;
+        const classMatch = person.class?.toLowerCase().includes(searchLower) || false;
+        const bioMatch = person.bio?.toLowerCase().includes(searchLower) || false;
+
+        return nameMatch || professionMatch || locationMatch || classMatch || bioMatch;
+      });
+      setDisplayedAlumni(filtered);
+    } else {
+      setDisplayedAlumni(alumni);
+    }
+  }, [searchTerm]);
 
   const toggleFlip = (id: string) => {
     setFlippedCards(prev =>
@@ -40,9 +94,9 @@ const AlumniDirectory: React.FC = () => {
           </p>
         </div>
 
-        {/* Search bar */}
-        <div className="max-w-md mx-auto mb-12">
-          <div className="relative">
+        {/* Search bar and Crush finder */}
+        <div className="max-w-md mx-auto mb-12 flex flex-col items-center gap-4">
+          <div className="relative w-full">
             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
               <Search className="w-5 h-5 text-gray-400" />
             </div>
@@ -54,14 +108,29 @@ const AlumniDirectory: React.FC = () => {
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
+          <button
+            onClick={findCrush}
+            className="flex items-center gap-2 bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105"
+          >
+            <Heart className="w-5 h-5" />
+            Find your crush ❤️
+          </button>
         </div>
+
+        {/* Floating hearts container */}
+        {showHearts && (
+          <div className="fixed inset-0 pointer-events-none z-50">
+            {generateHearts()}
+          </div>
+        )}
 
         {/* Alumni cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {filteredAlumni.map((person) => (
+          {displayedAlumni.map((person) => (
             <div
               key={person.id}
-              className={`flip-card h-[28rem] perspective cursor-pointer`}
+              className={`flip-card h-[28rem] perspective cursor-pointer ${randomAlumni === person.id ? 'animate-pulse' : ''
+                }`}
               onClick={() => toggleFlip(person.id)}
             >
               <div
