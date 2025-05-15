@@ -137,9 +137,65 @@ export const galleryImages: GalleryImage[] = [
   },
 
   {
-    id: "100",
+    id: "b101",
     src: "/images/12b/1.jpg",
     alt: "Lớp 12B - Ảnh 1",
+    year: 2005,
+    category: "12B",
+  },
+
+  {
+    id: "b102",
+    src: "/images/12b/2.jpg",
+    alt: "Lớp 12B - Ảnh 2",
+    year: 2005,
+    category: "12B",
+  },
+
+  {
+    id: "b103",
+    src: "/images/12b/3.jpg",
+    alt: "Lớp 12B - Ảnh 3",
+    year: 2005,
+    category: "12B",
+  },
+
+  {
+    id: "b104",
+    src: "/images/12b/4.jpg",
+    alt: "Lớp 12B - Ảnh 4",
+    year: 2005,
+    category: "12B",
+  },
+
+  {
+    id: "b105",
+    src: "/images/12b/5.jpg",
+    alt: "Lớp 12B - Ảnh 5",
+    year: 2005,
+    category: "12B",
+  },
+
+  {
+    id: "b106",
+    src: "/images/12b/6.jpg",
+    alt: "Lớp 12B - Ảnh 6",
+    year: 2005,
+    category: "12B",
+  },
+
+  {
+    id: "b107",
+    src: "/images/12b/7.jpg",
+    alt: "Lớp 12B - Ảnh 7",
+    year: 2005,
+    category: "12B",
+  },
+
+  {
+    id: "b108",
+    src: "/images/12b/8.jpg",
+    alt: "Lớp 12B - Ảnh 8",
     year: 2005,
     category: "12B",
   },
