@@ -103,7 +103,7 @@ const AlumniDirectory: React.FC = () => {
             <input
               type="text"
               className="w-full p-4 pl-10 text-sm text-gray-900 bg-white rounded-full focus:ring-2 focus:ring-indigo-500 focus:outline-none"
-              placeholder="Tìm kiếm theo tên, nghề nghiệp hoặc địa điểm"
+              placeholder="Tìm kiếm theo tên, lớp, nghề nghiệp hoặc địa điểm"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
