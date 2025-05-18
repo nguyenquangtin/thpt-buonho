@@ -159,7 +159,7 @@ const AlumniDirectory: React.FC = () => {
           {displayedAlumni.map((person) => (
             <div
               key={person.id}
-              className={`flip-card h-[28rem] perspective cursor-pointer ${randomAlumni === person.id ? 'animate-pulse' : ''
+              className={`flip-card h-[30rem] perspective cursor-pointer ${randomAlumni === person.id ? 'animate-pulse' : ''
                 }`}
               onClick={() => toggleFlip(person.id)}
             >
