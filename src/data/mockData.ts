@@ -528,6 +528,30 @@ export const galleryImages: GalleryImage[] = [
   },
 
   {
+    id: "109",
+    src: "/images/12i/2.jpg",
+    alt: "Lớp 12I - Ảnh 2",
+    year: 2005,
+    category: "12I",
+  },
+
+  {
+    id: "106",
+    src: "/images/12i/3.jpg",
+    alt: "Lớp 12I - Ảnh 3",
+    year: 2005,
+    category: "12I",
+  },
+
+  {
+    id: "107",
+    src: "/images/12i/4.jpg",
+    alt: "Lớp 12I - Ảnh 4",
+    year: 2005,
+    category: "12I",
+  },
+
+  {
     id: "28",
     src: "/images/12k/1.jpg",
     alt: "Lớp 12K - Ảnh 1",
