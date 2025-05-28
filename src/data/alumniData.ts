@@ -332,7 +332,7 @@ export const alumni: Alumnus[] = [
     class: "12K",
     image: "/images/alumni/12k/ngoc_hien.jpg",
     profession: "Cảng hàng không Buôn Ma Thuột",
-    location: "Buôn Ma Thuột, Đăk Lăk, Việt Nam",
+    location: "Buôn Ma Thuột, Đăk Lăk",
     bio: "0905944891<br />tranhienchk@gmail.com",
     socialLinks: {},
   },
@@ -584,6 +584,18 @@ export const alumni: Alumnus[] = [
     profession: "Sở-Ban-Ngành",
     location: "Krông Búk, Tỉnh Đắk Lắk",
     bio: "0915647779 <br />trungtructuyenvnn@gmail.com <br /> Văn phòng HĐND&UBND huyện Krông Búk, tỉnh Đắk Lắk",
+    socialLinks: {},
+  },
+
+  {
+    id: "51",
+    name: "Lê Quý Nguyên",
+    graduationYear: 2005,
+    class: "12M",
+    image: "/images/alumni/12m/nguyen_le.jpg",
+    profession: "CEO - Công ty CPĐT Vương Nhân",
+    location: "Đà Nẵng",
+    bio: "0765.848586	<br />lenguyen0286@gmail.com <br /> Từ mái trường xưa đến thương trường và hành trình sống – Mong được gặp lại bạn bè cũ để cùng chia sẻ những chặng đường đã qua và có cơ hội kết nối hành trình phía trước.",
     socialLinks: {},
   },
 ];

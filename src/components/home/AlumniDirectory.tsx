@@ -242,7 +242,7 @@ const AlumniDirectory: React.FC = () => {
             </div>
           ))}
           {/* Card skeleton for new alumni submission */}
-          <div className="h-[28rem] rounded-xl shadow-lg bg-white flex flex-col items-center justify-center border-2 border-dashed border-indigo-300">
+          <div className="h-[30rem] rounded-xl shadow-lg bg-white flex flex-col items-center justify-center border-2 border-dashed border-indigo-300">
             <div className="flex flex-col items-center">
               <img
                 src="/images/alumni/mock-avatar.png"
