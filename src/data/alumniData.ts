@@ -575,4 +575,15 @@ export const alumni: Alumnus[] = [
     bio: "0967857431<br />	hoangtrangdaklak87@gmail.com <br />Giáo Viên Trường THPT Dương Văn Dương, Nhà Bè, TP. HCM <br />Không biết nói gì hơn, rất vui khi được gặp lại mọi người, một thời kỉ niệm tuyệt vời đáng nhớ của tôi.",
     socialLinks: {},
   },
+  {
+    id: "50",
+    name: "Nguyễn Văn Hải",
+    graduationYear: 2005,
+    class: "12D",
+    image: "/images/alumni/12d/hai_nguyen.jpg",
+    profession: "Sở-Ban-Ngành",
+    location: "Krông Búk, Tỉnh Đắk Lắk",
+    bio: "0915647779 <br />trungtructuyenvnn@gmail.com <br /> Văn phòng HĐND&UBND huyện Krông Búk, tỉnh Đắk Lắk",
+    socialLinks: {},
+  },
 ];
